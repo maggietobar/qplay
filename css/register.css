@@ -1,0 +1,20 @@
+.container{
+  color: #FFF;
+  background-color: #777;
+}
+
+.fondo{
+  background: rgb(102, 102, 102);
+  padding: 25px 40px;
+}
+
+.row{
+  margin-bottom: 5px;
+}
+
+.label-fecha{
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 10px;
+}
