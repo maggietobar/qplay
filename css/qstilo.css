@@ -1,42 +1,21 @@
+/*-al body recibe el padding porque la barra de navegacion es fixed -*/
 
-.jumbotron {
-    background-color: #000000;
-    padding-left: 17px;
-    height: 400px;
-    margin-bottom: 0px;
-    border-radius: 0px;
-    background-image: url(../img/tocguit.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-shadow: black 0.3em 0.3em 0.3em;
-    color:#fff;
-    /*-webkit-filter: opacity(20%);
-    filter: opacity(20%);*/
+body {
+    padding-top: 70px;
 }
 
-.jumbotron h1{
-    margin-top: 110px;
-    margi-bottom: 10px;
-}
-
-.jumbotron img {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+/*-estilo general de navbar-*/
 
 .navbar {
+      background-colo: #000000;
       margin-bottom: 0px;
       border-radius: 0px;
       border: 0px;
       padding: 10px;
+      opacity: 1;
 }
 
-/*.fa-search {
-   color:#b1b1b1;
-   padding-left: 10px;
-   padding-top: 7px;
-   padding-bottom: 7px;
-}*/
+/* estilo de la barra de busqueda del navbar */
 
 .nav-search {
   border-bottom: 1px;
@@ -54,12 +33,21 @@
   transition: all 0.5s ease-in-out;
 }
 
+/*.fa-search {
+   color:#b1b1b1;
+   padding-left: 10px;
+   padding-top: 7px;
+   padding-bottom: 7px;
+}*/
+
 .nav-search:focus {
   width: 450px;
   border-color: #00bfff;
   background-color: #d7d7d7;
   color: #1c1c1c;
 }
+
+/* animacion del boton que aparece cuando el navbar se colapsa a bajas resoluciones */
 
 .navbar-toggle {
   padding: 9px 7px;
@@ -84,10 +72,7 @@
      opacity: 0;
 }
 
-.cell {
-    width: 375px;
-    height: auto;
-}
+/* estilos de los botones de navbar "Conectate y Registrate"*/
 
 .btn-nav {
     border-color: #00bfff;
@@ -120,12 +105,43 @@
   margin-right: 5px;
 }
 
+/* jumbotron */
+
+.jumbotron {
+    background-color: #000000;
+    padding-left: 17px;
+    height: 400px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-image: url(../img/tocguit.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    color:#fff;
+}
+
+.jumbotron h1{
+    margin-top: 110px;
+}
+
+
+/** el cell hay que definirlo */
+
+.cell {
+    width: 375px;
+    height: 300px;
+}
+
+
+/* la nota musical */
 
 p >.fa-5 {
     font-size: 13em;
     margin: 0px;
     color: #00bfff;
 }
+
+/* colores de fondo de cada seccion*/
 
 .gray {
   background-color: #d7d7d7;
@@ -146,6 +162,8 @@ p >.fa-5 {
   padding-bottom: 35px;
 }
 
+/* seccion de Grupos y Eventos */
+
 .img-circle {
    margin-left: 38px;
    margin-top: 32px;
@@ -159,20 +177,12 @@ p >.fa-5 {
   margin-bottom: 7px;
   padding: 2px 18px;
 }
-/*
-.event-info:nth-child(2) {
-     border-color: #cc00ff;
-}
-.event-info:nth-child(3) {
-     border-color: #ffde00;
-}
-.event-info:nth-child(4) {
-     border-color: #00ff21;
-}
-*/
+
 .fa-share {
   float:right;
 }
+
+/* footer todavia hay que trabajarlo */
 
 .footer {
   height: 200px;
