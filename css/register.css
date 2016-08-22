@@ -8,13 +8,13 @@
   padding: 25px 40px;
 }
 
-.row{
-  margin-bottom: 5px;
-}
-
-.label-fecha{
+.titulos-form{
   margin-bottom: 5px;
   font-weight: bold;
   padding-left: 15px;
   padding-top: 10px;
+}
+
+.form-control{
+  margin-bottom: 10px;
 }
