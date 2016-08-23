@@ -18,3 +18,7 @@ Consignas en común para las 3 ramas:
 6) El cliente pide que el estilo del sitio sea común a las 4 páginas.
 
 7) El cliente pide que las páginas se vean de forma cómoda en dispositivos móviles.
+
+------------------------------------------------------------------------
+
+Scrum 2
