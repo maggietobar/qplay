@@ -1,18 +1,31 @@
 /*-al body recibe el padding porque la barra de navegacion es fixed -*/
 
 body {
-    padding-top: 70px;
+    /*padding-top: 70px;*/
 }
 
 /*-estilo general de navbar-*/
 
 .navbar {
-      background-colo: #000000;
       margin-bottom: 0px;
       border-radius: 0px;
       border: 0px;
       padding: 10px;
-      opacity: 1;
+      transition: all 0.6s ease-in-out;
+}
+
+/*- estilo del logo de la pagina -*/
+
+.logo {
+     font-size: 35px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #94d500;
+}
+
+.navbar-inverse .navbar-text {
+    font-size: 20px;
 }
 
 /* estilo de la barra de busqueda del navbar */
@@ -59,6 +72,11 @@ body {
   transition: all .5s;
 }
 
+.navbar-inverse .navbar-toggle .icon-bar {
+     border-color:#94d500;
+     background-color: #94d500; /* verde ejemplo*/
+}
+
 .navbar-toggle.click .icon-bar:nth-child(1) {
      transform: rotate(45deg) translateY(4px) translateX(5px);
 }
@@ -75,7 +93,7 @@ body {
 /* estilos de los botones de navbar "Conectate y Registrate"*/
 
 .btn-nav {
-    border-color: #00bfff;
+    border-color: #94d500;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -87,13 +105,13 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color:#00bfff;
+  color:#94d500;
   padding: 13px;
 }
 
 .navbar-inverse .navbar-nav > li > .btn-nav:hover {
-    border-color: #ccc;
-    background-color: #00bfff;
+    border-color: #A5ED00;
+    background-color: #94d500;
     color: #fff;
 }
 
@@ -108,16 +126,13 @@ body {
 /* jumbotron */
 
 .jumbotron {
-    background-color: #000000;
-    padding-left: 17px;
-    height: 400px;
+    height: 470px;
     margin-bottom: 0px;
     border-radius: 0px;
     background-image: url(../img/tocguit.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    text-shadow: black 0.3em 0.3em 0.3em;
-    color:#fff;
+   /* text-shadow: black 1em 1em 1em;*/
 }
 
 .jumbotronlog {
@@ -134,24 +149,27 @@ body {
 }
 
 .jumbotron h1{
-    margin-top: 110px;
+    margin-top: 150px;
+    font-family: 'Comfortaa', cursive;
+    color: #66ff1a;
+    text-shadow: 0px 0px 7px #000000;
 }
 
-
-/** el cell hay que definirlo */
-
-.cell {
-    width: 375px;
-    height: 300px;
+.jumbotron p {
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 0px 0px 7px #000000;    
+    
 }
 
 
 /* la nota musical */
 
 p >.fa-5 {
-    font-size: 13em;
+    font-size: 12em;
     margin: 0px;
-    color: #00bfff;
+    color: #94d500;
 }
 
 /* colores de fondo de cada seccion*/
@@ -163,7 +181,7 @@ p >.fa-5 {
 }
 
 .gray2 {
-  background-color: #f2f2f2;
+  background-color: #d7d7d7;
   padding-top: 35px;
   padding-bottom: 0px;
 }
@@ -177,16 +195,25 @@ p >.fa-5 {
 
 /* seccion de Grupos y Eventos */
 
-.img-circle {
-   margin-left: 38px;
+.event {
+    color: #fff;
+    background-image: url(../img/piano1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+.img-square {
+   margin-left: 27px;
    margin-top: 32px;
-   border: 4px solid #00bfff;
+   border: 4px solid #94d500;
 }
 
 .event-info {
   border-width: 1px 1px 1px 7px;
   border-style: solid;
-  border-color: #00bfff;
+  border-color: #94d500;
   margin-bottom: 7px;
   padding: 2px 18px;
 }
@@ -195,17 +222,96 @@ p >.fa-5 {
   float:right;
 }
 
+/* seccion de vista para celular */
+
+p > .logpage {
+    background-color: #222;
+    padding: 7px;
+    font-size: 30px;
+    color: #94d500;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.inlogo {
+    display: inline;
+    padding: 5px;
+    font-size: 22px;
+}
+
+
 /* footer todavia hay que trabajarlo */
 
 .footer {
-  height: 200px;
   background-color: #333333;
   color: #c4c4c4;
-  padding-top: 30px;
+  padding-top: 23px;
+  padding-bottom: 23px;
 }
 
-.footlink {
+li > .footlink {
+    display: inline-block;
     text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
     color: #c4c4c4; 
-    
+    border-left: 1px;
+    border-color: #fff;
+    transition: all 0.3s ease-in-out;
 }
+
+.footlink:hover {
+    color: #94d500;
+}
+
+.footp {
+    font-size: 14px;
+}
+
+.footlog > i { 
+    color:#94d500; /*#ff9900;*/
+    padding-left: 7px;
+    margin-bottom: 25px;
+}
+
+.line {
+    width: 300px;
+    height: 1px;
+    background-color: #444;
+    margin-bottom: 7px;
+}
+
+
+/* fuentes para titulos */
+
+.font-cabin {font-family: 'Cabin', sans-serif;}
+.font-poiret {font-family: 'Poiret One', cursive;} /*finito*/
+.font-exo {font-family: 'Exo', sans-serif;}
+.font-kaushan {font-family: 'Kaushan Script', cursive;} /*cursiva*/
+.font-comfortaa {font-family: 'Comfortaa', cursive;} /*redondeada*/
+.font-russo {font-family: 'Russo One', sans-serif;} /*negrita imprenta*/
+.font-farsan {font-family: 'Farsan', cursive;} /*cursiva condensada*/
+.font-righteous {font-family: 'Righteous', cursive;} /*redondeada impreta no usar*/  
+
+/* fuentes para parrafos */
+
+.font-ubuntu {font-family: 'Ubuntu', sans-serif;}
+.font-poppins {font-family: 'Poppins', sans-serif;}
+.font-maven {font-family: 'Maven Pro', sans-serif;}
+.font-antic {font-family: 'Antic', sans-serif;}
+
+
+.logspot {
+    font-size: 25px;
+}
+
+/* tamaño de fuente para todos los parrafos parrafos */
+p {
+    font-size: 19px;
+}
+
+
+
+
+
