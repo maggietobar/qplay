@@ -146,8 +146,8 @@ body {
     font-family: 'Exo', sans-serif;
     font-size: 25px;
     color: #fff;
-    text-shadow: 0px 0px 7px #000000;    
-    
+    text-shadow: 0px 0px 7px #000000;
+
 }
 
 
@@ -190,7 +190,7 @@ p > .fa-tel {
     color: #fff;
     background-image: url(../img/piano1.jpg);
     background-size: cover;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     padding-top: 20px;
     padding-bottom: 35px;
 }
@@ -230,6 +230,7 @@ p > .logpage {
     display: inline;
     padding: 5px;
     font-size: 22px;
+    font-family: Ubuntu;
 }
 
 
@@ -247,7 +248,7 @@ li > .footlink {
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
     font-size: 17px;
-    color: #c4c4c4; 
+    color: #c4c4c4;
     border-left: 1px;
     border-color: #fff;
     transition: all 0.3s ease-in-out;
@@ -261,7 +262,7 @@ li > .footlink {
     font-size: 14px;
 }
 
-.footlog > i { 
+.footlog > i {
     color:#94d500; /*#ff9900;*/
     padding-left: 7px;
     margin-bottom: 25px;
@@ -284,7 +285,7 @@ li > .footlink {
 .font-comfortaa {font-family: 'Comfortaa', cursive;} /*redondeada*/
 .font-russo {font-family: 'Russo One', sans-serif;} /*negrita imprenta*/
 .font-farsan {font-family: 'Farsan', cursive;} /*cursiva condensada*/
-.font-righteous {font-family: 'Righteous', cursive;} /*redondeada impreta no usar*/  
+.font-righteous {font-family: 'Righteous', cursive;} /*redondeada impreta no usar*/
 
 /* fuentes para parrafos */
 
@@ -302,8 +303,3 @@ li > .footlink {
 p {
     font-size: 19px;
 }
-
-
-
-
-
