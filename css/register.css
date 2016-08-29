@@ -1,6 +1,10 @@
+body{
+   background-color: #333333;
+}
+
 .container{
+  padding-top: 70px;
   color: #FFF;
-  background-color: #777;
 }
 
 .fondo{
@@ -9,12 +13,55 @@
 }
 
 .titulos-form{
+  font-size: 15px;
   margin-bottom: 5px;
   font-weight: bold;
   padding-left: 15px;
   padding-top: 10px;
 }
 
-.form-control{
-  margin-bottom: 10px;
+.row-padding{
+  padding: 0 15px;
+}
+
+.form-control {
+    border-radius: 0px;
+    border-color: #94d500;
+    padding: 23px;
+    background-color: #222;
+    color: #94d500;
+    margin-bottom: 10px;
+}
+
+.select{
+  padding: 0;
+  height: 48px;
+}
+
+.form-group > input {
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group > input:focus {
+    border: 1px solid  #94d500;
+    box-shadow: 0px 0px 9px #94d500;
+}
+
+.btn-registrar {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
+    border-radius: 0px;
+    border-color: #94d500;
+    background-color: #222;
+    margin-top: 25px;
+    padding: 9px 28px;
+    color: #94d500;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-registrar:hover {
+    border-color: #fff;
+    background-color: #94d500;
+    color: #fff;
 }
