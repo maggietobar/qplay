@@ -25,6 +25,10 @@ body{
   padding-top: 10px;
 }
 
+.regtit {
+    padding-bottom: 10px;
+}
+
 .row-padding{
   padding: 0 15px;
 }
