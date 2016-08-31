@@ -2,14 +2,19 @@ body{
    background-color: #333333;
 }
 
+.jumbotronreg {
+    height: 910px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-image: url(../img/mic3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#fff;
+}
+
 .container{
   padding-top: 70px;
   color: #FFF;
-}
-
-.fondo{
-  background: rgb(102, 102, 102);
-  padding: 25px 40px;
 }
 
 .titulos-form{
@@ -31,18 +36,30 @@ body{
     background-color: #222;
     color: #94d500;
     margin-bottom: 10px;
+    transition: all 0.4s ease-out;
 }
 
 .select{
   padding: 0;
   height: 48px;
+  transition: all 0.4s ease-out;
 }
 
 .form-group > input {
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 12px #000;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
-.form-group > input:focus {
+[class*="col-"] > input:focus {
+    border: 1px solid  #94d500;
+    box-shadow: 0px 0px 9px #94d500;
+}
+
+[class*="col-"] > select:focus {
     border: 1px solid  #94d500;
     box-shadow: 0px 0px 9px #94d500;
 }
@@ -55,6 +72,7 @@ body{
     background-color: #222;
     margin-top: 25px;
     padding: 9px 28px;
+    box-shadow: 0px 0px 12px #000;
     color: #94d500;
     width: 100%;
     transition: all 0.4s ease-in-out;
@@ -63,5 +81,12 @@ body{
 .btn-registrar:hover {
     border-color: #fff;
     background-color: #94d500;
+    box-shadow: 0px 0px 9px #94d500;
     color: #fff;
+}
+
+@media only screen and (max-width:991px) {
+    .jumbotronreg {
+        height: 1190px;
+    }
 }

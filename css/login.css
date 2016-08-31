@@ -40,7 +40,12 @@
 }
 
 .form-group > input {
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 12px #000;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 .form-group > input:focus {
@@ -56,6 +61,7 @@
     background-color: #222;
     margin-top: 25px;
     padding: 9px 28px;
+    box-shadow: 0px 0px 12px #000;
     color: #94d500;
     transition: all 0.4s ease-in-out;
 }
@@ -64,6 +70,7 @@
     border-color: #fff;
     background-color: #94d500;
     color: #fff;
+    box-shadow: 0px 0px 9px #94d500;
 }
 
 

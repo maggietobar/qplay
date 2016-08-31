@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Abel|Cabin|Comfortaa|Exo|Farsan|Kaushan+Script|Poiret+One|Righteous|Russo+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Antic|Maven+Pro|Poppins|Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="css/homex.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/homex.css" type="text/css" />
     <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
     <title>Register</title>
 </head>
 
@@ -17,7 +16,7 @@
       <!-- COMIENZO DEL NAVBAR Y SU CONTENIDO -->
       <!-- Para hacerlo fluido quitar "navbar-fixed-top" y sacar padding del body en la hoja del estilo -->
 
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -44,11 +43,12 @@
         </div>
       </nav>
 
-      <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-3 fondo">
-
-                <form class="" action="index.html">
+<div class="jumbotronreg">
+  <div class="container-fluid login">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <h3 class="text-center font-comfortaa logtit">Registro</h3>
+          <form class="form" action="index.html">
 
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -161,24 +161,24 @@
 
                         <div class="row row-padding">
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda1" value="">
+                                <input type="text" class="form-control" name="banda1" value="" placeholder="Banda 1">
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda2" value="">
+                                <input type="text" class="form-control" name="banda2" value="" placeholder="Banda 2">
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda3" value="">
+                                <input type="text" class="form-control" name="banda3" value="" placeholder="Banda 3">
                             </div>
                         </div>
                         <div class="row row-padding">
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda4" value="">
+                                <input type="text" class="form-control" name="banda4" value="" placeholder="Banda 4">
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda5" value="">
+                                <input type="text" class="form-control" name="banda5" value="" placeholder="Banda 5">
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda6" value="">
+                                <input type="text" class="form-control" name="banda6" value="" placeholder="Banda 6">
                             </div>
                         </div>
                       </div>
@@ -230,11 +230,13 @@
                     </div>
 
                 </form>
-            </div>
         </div>
-        <!-- COMIENZO DEL FOOTER -->
+    </div>
+  </div>
+</div>        
 
-        <div class="container-fluid footer">
+        <!-- COMIENZO DEL FOOTER -->
+<div class="container-fluid footer">
           <div class="row">
             <div class="col-md-12">
               <ul class="list-inline text-center">
@@ -276,9 +278,13 @@
             </div>
           </div>
         </div>
-
         <!-- FIN DEL FOOTER -->
-    </div>
+
+<!-- COMIENZO DE JAVASCRIPT PLUGINS -->
+<script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/botcolaps.js"></script>
+   
 </body>
 
 </html>
