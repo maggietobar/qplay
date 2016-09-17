@@ -36,7 +36,8 @@ body{
 .form-control {
     border-radius: 0px;
     border-color: #94d500;
-    padding: 23px;
+    height: 50px;
+    padding-left: 18px;
     background-color: #222;
     color: #94d500;
     margin-bottom: 10px;
