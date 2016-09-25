@@ -52,21 +52,25 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <h3 class="text-center font-comfortaa logtit">Iniciar Sesión</h3>
-          <form class="form">
+		       
+          <form class="form" id="form" action="" method="post">
             
+            <div class="error"><p class="errcript"></p></div>
             <div class="form-group">
               <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="text" class="form-control" id="mail" placeholder="Email" maxlength="55">
             </div>
+            <div class="error"><p class="errcript"></p></div>
             <div class="form-group">
               <!-- <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label> -->
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
+              <input type="password" class="form-control" id="pass" placeholder="Contraseña" maxlength="40">
             </div>
 
             <div class="checkbox">
               <label><input type="checkbox"> Recordarme</label>
               <a href="forgotpass.html" class="olvidcont">Olvidaste tu contraseña?</a>
             </div>
+            
               <button type="submit" class="btn btn-login center-block">Ingresar</button>
           </form>
         </div>
@@ -124,7 +128,8 @@
 
 <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/botcolaps.js"></script>   
+<script type="text/javascript" src="js/botcolaps.js"></script>
+<script type="text/javascript" src="js/logval.js"></script>
     
 </body>
 </html>
