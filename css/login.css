@@ -130,11 +130,6 @@ dt {
 }
 
 dd {
-    display: none;
-}
-
-.show > dd {
     font-family: 'Maven Pro', sans-serif;
     font-size: 16px;
-    display: block;
 }
