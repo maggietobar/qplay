@@ -1,13 +1,13 @@
-errores = [];
+var errores = [];
 
 window.onLoad = function() {
-    boton = document.querySelector('.btn-registrar');
-    evento = boton.addEventListener('click', 'validaciones');
-    evento.preventDefault();
+  var  boton = document.querySelector('.btn-registrar');
+  var  evento = boton.addEventListener('click', 'validaciones');
+       evento.preventDefault();
 };
 
 function validaciones() {
-    form = document.forms[0];
+  var  form = document.forms[0];
 
     // Valido que el nombre no esté vacío.
 

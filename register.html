@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/homex.css" type="text/css" />
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
-    <script src="js/validacion_register.js" charset="utf-8"></script>
     <title>Register</title>
 </head>
 
@@ -47,38 +46,29 @@
 
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30">
                         </div>
-
 
                         <div class="col-xs-12 col-md-6">
-                            <input type="text" name="apellido" class="form-control" placeholder="Apellido">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <input type="text" name="email" class="form-control" placeholder="Email">
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <input type="text" name="email2" class="form-control" placeholder="Repita su email">
+                            <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                            <input type="text" name="email" class="form-control" placeholder="Email" maxlength="55">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña">
+                            <input type="password" name="password" class="form-control" placeholder="Contraseña" maxlength="30">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña" maxlength="30">
                         </div>
                     </div>
 
@@ -151,30 +141,17 @@
 
                     <div class="row">
                       <div class="form-group">
-
-                                <p class="titulos-form">¿Qué bandas te gustan?</p>
-
+                        <p class="titulos-form">¿Qué bandas te gustan?</p>
                         <div class="row row-padding">
+                          <div id="bandas">
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda1" value="" placeholder="Banda 1">
+                                <input type="text" class="form-control" id="band" name="banda1" placeholder="Banda 1" maxlength="30">
                             </div>
+                          </div>  
                             <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda2" value="" placeholder="Banda 2">
+                                <button class="btn btn-banda" id="sumband"><i class="fa fa-plus-circle fa-lg"></i></button>
                             </div>
-                            <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda3" value="" placeholder="Banda 3">
-                            </div>
-                        </div>
-                        <div class="row row-padding">
-                            <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda4" value="" placeholder="Banda 4">
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda5" value="" placeholder="Banda 5">
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <input type="text" class="form-control" name="banda6" value="" placeholder="Banda 6">
-                            </div>
+
                         </div>
                       </div>
                     </div>
@@ -185,8 +162,7 @@
 
                         <div class="row row-padding">
                         <div class="col-xs-6">
-                              <input type="text" class="form-control" name="inst1" value="" placeholder=
-                              "Instrumento">
+                              <input type="text" class="form-control" name="inst1" placeholder="Instrumento" maxlength="30">
                         </div>
                         <div class="col-xs-6">
                           <select class="form-control select" name="nivel-inst1">
@@ -279,6 +255,8 @@
 <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/botcolaps.js"></script>
+<!-- script type="text/javascript" src="js/validacion_register.js" charset="utf-8"></script -->
+<script type="text/javascript" src="js/regsupport.js"></script>
 
 </body>
 

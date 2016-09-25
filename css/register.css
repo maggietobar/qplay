@@ -38,6 +38,7 @@ body{
     border-color: #94d500;
     height: 50px;
     padding-left: 18px;
+    padding-right: 18px;
     background-color: #222;
     color: #94d500;
     margin-bottom: 10px;
@@ -46,7 +47,7 @@ body{
 
 .select{
   padding: 0;
-  height: 48px;
+  height: 50px;
   transition: all 0.4s ease-out;
 }
 
@@ -83,6 +84,31 @@ body{
     background-color: #94d500;
     box-shadow: 0px 0px 9px #94d500;
     color: #fff;
+}
+
+.btn-banda {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
+    border-radius: 0px;
+    background-color: #222;
+    height: 50px;
+    box-shadow: 0px 0px 12px #000;
+    color: #e68a00;
+    width: 100%;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    border: 2px #e68a00 dashed;
+}
+
+.btn-banda:focus {
+    color: #e68a00;
+    outline: none;
+}
+
+.btn-banda:hover {
+    color: #e68a00;
+    outline: none;
+    box-shadow: 0px 0px 9px #e68a00;
 }
 
 @media only screen and (max-width:991px) {
