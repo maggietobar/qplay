@@ -1,3 +1,25 @@
+
+var cont, contenido, botplus, hayErrores, form;
+
+window.onload = function() {
+  cont = 1;
+  contenido = document.getElementById("bandas");
+  botplus = document.getElementById("sumband");
+  hayErrores = true;
+  form = document.forms[0];
+  botplus.addEventListener("click", agregar);
+  form.addEventListener('submit', validarForm);
+};
+
+function validarForm (evt) {
+    evt.preventDefault();
+    console.log('apretó submit');
+    if (!validaciones()) {
+        console.log('No hubo errores');
+        form.submit();
+    }
+}
+
 function calcularEdad(diaNac, mesNac, anioNac) {
     var hoy = new Date();
     var anioHoy = hoy.getFullYear();
@@ -37,8 +59,8 @@ function validaciones() {
     if (!form.elements.apellido.value) {
         cargarError('error-apellido', 'El apellido no puede estar vacío');
         hayErrores = true;
-    }else{
-      cargarError('error-apellido', '');
+    } else {
+        cargarError('error-apellido', '');
     }
 
     if (!form.elements.email.value) {
@@ -81,16 +103,25 @@ function validaciones() {
     return hayErrores;
 }
 
-window.onload = function() {
-    var hayErrores = true;
-    var form = document.forms[0];
+function agregar(evt) {
+    evt.preventDefault();
+    cont++;
+    console.log('Apretó el más');
 
-    form.onsubmit = function(evt) {
-        evt.preventDefault();
-        console.log('apretó submit');
-        if (!validaciones()){
-          console.log('No hubo errores');
-          form.submit();
-        }
-    };
-};
+    var divcont = document.createElement("div");
+    divcont.setAttribute("class", "col-xs-12 col-md-4");
+
+    var input = document.createElement("input");
+    input.setAttribute("class", "form-control");
+    input.setAttribute("placeholder", "Banda " + cont);
+    input.setAttribute("name", "banda" + cont);
+    input.setAttribute("maxlength", "30");
+
+    contenido.appendChild(divcont).appendChild(input);
+
+    if (cont > 8) {
+        botplus.style.display = "none";
+    } else {
+        botplus.style.display = "block";
+    }
+}
