@@ -1,13 +1,15 @@
 window.onload = function () {
 
     var cont = 1;
-    var botplus = document.getElementById("sumband");
+    //var botplus = document.getElementById("sumband");
+    var botplus = document.querySelector(".btn-banda");
     var contenido = document.getElementById("bandas");
     botplus.addEventListener("click", agregar);
 
     function agregar (evt) {
        evt.preventDefault();
        cont++;
+       console.log('Apretó el más');
 
         var divcont = document.createElement("div");
             divcont.setAttribute("class", "col-xs-12 col-md-4");

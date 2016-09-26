@@ -1,9 +1,9 @@
 function calcularEdad(diaNac, mesNac, anioNac) {
-    hoy = new Date();
-    anioHoy = hoy.getFullYear();
-    mesHoy = hoy.getMonth();
-    diaHoy = hoy.getDate();
-    edad = anioHoy - anioNac;
+    var hoy = new Date();
+    var anioHoy = hoy.getFullYear();
+    var mesHoy = hoy.getMonth();
+    var diaHoy = hoy.getDate();
+    var edad = anioHoy - anioNac;
 
     if (mesHoy < mesNac - 1) {
         edad--;
@@ -22,9 +22,9 @@ function cargarError(id, error) {
 
 function validaciones() {
     var form = document.forms[0];
-    hayErrores = false;
-    mailreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    passreg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    var hayErrores = false;
+    var mailreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    var passreg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     // Valido que el nombre no esté vacío.
 
     if (!form.elements.nombre.value) {
