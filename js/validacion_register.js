@@ -1,58 +1,96 @@
-var errores = [];
+function calcularEdad(diaNac, mesNac, anioNac) {
+    hoy = new Date();
+    anioHoy = hoy.getFullYear();
+    mesHoy = hoy.getMonth();
+    diaHoy = hoy.getDate();
+    edad = anioHoy - anioNac;
 
-window.onLoad = function() {
-  var  boton = document.querySelector('.btn-registrar');
-  var  evento = boton.addEventListener('click', 'validaciones');
-       evento.preventDefault();
-};
+    if (mesHoy < mesNac - 1) {
+        edad--;
+    }
+
+    if (mesNac - 1 == mesHoy && diaHoy < diaNac) {
+        edad--;
+    }
+    return edad;
+}
+
+function cargarError(id, error) {
+    var parrafoError = document.getElementById(id);
+    parrafoError.innerText = error;
+}
 
 function validaciones() {
-  var  form = document.forms[0];
-
+    var form = document.forms[0];
+    hayErrores = false;
+    mailreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    passreg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     // Valido que el nombre no esté vacío.
 
     if (!form.elements.nombre.value) {
-        errores.push('El nombre no puede estar vacío');
+        cargarError('error-nombre', 'El nombre no puede estar vacío');
+        hayErrores = true;
+    } else {
+        cargarError('error-nombre', '');
     }
 
     if (!form.elements.apellido.value) {
-        errores.push('El apellido no puede estar vacío');
+        cargarError('error-apellido', 'El apellido no puede estar vacío');
+        hayErrores = true;
+    }else{
+      cargarError('error-apellido', '');
     }
+
     if (!form.elements.email.value) {
-        errores.push('El email no puede estar vacío');
-    }
-    if (!form.elements.email2.value) {
-        errores.push('El campo para confirmar mail no puede estar vacío');
-    }
-
-    if ((form.elements.email.value && form.elements.email2.value) && form.elements.email.value != form.elements.email2.value) {
-        errores.push("La confirmación y el campo email son distintos");
-    }
-
-    if (calcularEdad(form.elements.dianac.value, form.elements.mesnac.value, form.elements.anionac.value) < 13){
-      errores.push('Hay que ser mayor de 13 años para poder crear una cuenta');
+        cargarError('error-mail', 'El email no puede estar vacío');
+        hayErrores = true;
+    } else if (!mailreg.test(form.elements.email.value)) {
+        cargarError('error-mail', 'El email no es válido');
+        hayErrores = true;
+    } else {
+        cargarError('error-mail', '');
     }
 
-    console.log(errores);
 
+    if (!form.elements.password.value) {
+        cargarError('error-pass', 'La contraseña no puede estar vacía');
+        hayErrores = true;
+    } else if (!passreg.test(form.elements.password.value)) {
+        cargarError('error-pass', 'La contraseña debe tener al menos una mayúscula, una minúscula y un número');
+        hayErrores = true;
+    } else {
+        cargarError('error-pass', '');
+    }
+
+    if (!form.elements.password2.value) {
+        cargarError('error-pass2', 'La confirmación de contraseña no puede estar vacía');
+        hayErrores = true;
+    } else if (form.elements.password.value != form.elements.password2.value) {
+        cargarError('error-pass2', 'La contraseña y su confirmación son distintas');
+        hayErrores = true;
+    } else {
+        cargarError('error-pass2', '');
+    }
+
+    if (calcularEdad(form.elements.dianac.value, form.elements.mesnac.value, form.elements.anionac.value) < 13) {
+        cargarError('error-fecha', 'Hay que ser mayor de 13 años para poder crear una cuenta');
+        hayErrores = true;
+    } else {
+        cargarError('error-fecha', '');
+    }
+    return hayErrores;
 }
 
-function calcularEdad(diaNac, mesNac, anioNac)
-{
-  hoy     = new Date();
-  anioHoy = todayDate.getFullYear();
-  mesHoy  = todayDate.getMonth();
-  diaHoy  = todayDate.getDate();
-  edad    = anioHoy - anioNac;
+window.onload = function() {
+    var hayErrores = true;
+    var form = document.forms[0];
 
-  if (mesHoy < mesNac - 1)
-  {
-    edad--;
-  }
-
-  if (mesNac - 1 == mesHoy && diaHoy < diaNac)
-  {
-    edad--;
-  }
-  return edad;
-}
+    form.onsubmit = function(evt) {
+        evt.preventDefault();
+        console.log('apretó submit');
+        if (!validaciones()){
+          console.log('No hubo errores');
+          form.submit();
+        }
+    };
+};

@@ -1,8 +1,8 @@
 
 .jumbotronlog {
     height: 420px;
-    margin-bottom: 0px;
-    border-radius: 0px;
+    margin-bottom: 0;
+    border-radius: 0;
     background-image: url(../img/tocguitLog.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@
     float: right;
     font-family: 'Ubuntu', sans-serif;
     font-size: 15px;
-    color: #c4c4c4; 
+    color: #c4c4c4;
     transition: all 0.3s ease-in-out;
 }
 
@@ -28,12 +28,12 @@
 
 .logtit {
     color: #fff;
-    text-shadow: 0px 0px 7px #000000;
+    text-shadow: 0 0 7px #000000;
 }
 
 .form-control {
     font-size: 17px;
-    border-radius: 0px;
+    border-radius: 0;
     border-color: #94d500;
     height: 50px;
     padding-left: 18px;
@@ -43,7 +43,7 @@
 }
 
 .form-group > input {
-    box-shadow: 0px 0px 12px #000;
+    box-shadow: 0 0 12px #000;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
@@ -53,7 +53,7 @@
 
 .form-group > input:focus {
     border: 1px solid #94d500;
-    box-shadow: 0px 0px 9px #94d500;
+    box-shadow: 0 0 9px #94d500;
 }
 
 /* efecto cuando se produce un error en el campo */
@@ -68,12 +68,12 @@
     border-color: #e62e00;
     background-color: #4d0000;
     color: #e62e00;
-    box-shadow: 0px 0px 12px #000;
+    box-shadow: 0 0 12px #000;
 }
 
 .onerror > input:focus {
     border: 1px solid #e62e00;
-    box-shadow: 0px 0px 12px #e62e00;
+    box-shadow: 0 0 12px #e62e00;
 }
 
 /*-------------------------------------------fin efecto-*/
@@ -81,12 +81,12 @@
 .btn-login {
     font-family: 'Maven Pro', sans-serif;
     font-size: 20px;
-    border-radius: 0px;
+    border-radius: 0;
     border-color: #94d500;
     background-color: #222;
     margin-top: 25px;
     padding: 9px 28px;
-    box-shadow: 0px 0px 12px #000;
+    box-shadow: 0 0 12px #000;
     color: #94d500;
     transition: all 0.4s ease-in-out;
 }
@@ -95,14 +95,14 @@
     border-color: #fff;
     background-color: #94d500;
     color: #fff;
-    box-shadow: 0px 0px 9px #94d500;
+    box-shadow: 0 0 9px #94d500;
 }
 
 .btn-login:focus {
     border-color: #94d500;
     background-color: #222;
     color: #fff;
-    box-shadow: 0px 0px 12px #000;
+    box-shadow: 0 0 12px #000;
 }
 
 /*  AQUI VA TODO EL ESTILO QUE TIENE QUE VER CON CON FAQS  */
@@ -110,8 +110,8 @@
 .jumbotronfaq {
     height: 180px;
     padding-top: 43px;
-    margin-bottom: 0px;
-    border-radius: 0px;
+    margin-bottom: 0;
+    border-radius: 0;
     background-image: url(../img/mic2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -120,7 +120,7 @@
 .jumbotronfaq h1{
     font-family: 'Comfortaa', cursive;
     color: #66ff1a;
-    text-shadow: 0px 0px 7px #000000;
+    text-shadow: 0 0 7px #000000;
 }
 
 dt {
