@@ -16,23 +16,12 @@ window.onload = function() {
 
   mes.addEventListener('change', validarDias);
   anio.addEventListener('change', validarDias);
-
-
- // ARRANCA AJAX
-
- //Guardo el botón enviar en una variable
- registrar = document.getElementById('registrar');
-// e de evento
- registrar.addEventListener('click', ajax);
-
 };
 
 function validarForm (evt) {
     evt.preventDefault();
-    console.log('apretó submit');
     if (!validaciones()) {
-        console.log('No hubo errores');
-        // form.submit();
+        ajax();
     }
 }
 
@@ -222,8 +211,7 @@ function validarDias() {
 
 // FUNCIONES AJAX
 
-function ajax (e){
-  e.preventDefault();
+function ajax (){
   document.getElementById('errores').innerHTML = "";
   enviarDato();
 
