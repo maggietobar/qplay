@@ -1,5 +1,6 @@
 
 var cont, contenido, botplus, hayErrores, form, mes, dia, anio, registrar, xmlhttp1, xmlhttp2, usuarios;
+var cont2, pos, botplus2, contenido2, divInsSel, selcontenido;
 
 window.onload = function() {
   cont = 1;
@@ -9,6 +10,16 @@ window.onload = function() {
   form = document.forms[0];
   botplus.addEventListener("click", agregar);
   form.addEventListener('submit', validarForm);
+  
+    cont2 = 1;
+    pos = -1;
+    botplus2 = document.getElementById("suminst");
+    contenido2 = document.getElementById("instrument");
+    divInsSel = document.getElementsByClassName("instselect");
+    selcontenido = document.getElementsByClassName("selcontenido");
+    botplus2.addEventListener("click", agregarInstrumento);
+
+
 
   dia = document.getElementById('dianac');
   mes = document.getElementById('mesnac');
@@ -17,6 +28,19 @@ window.onload = function() {
   mes.addEventListener('change', validarDias);
   anio.addEventListener('change', validarDias);
 };
+
+ // carga de opciones
+    function option () {
+        var opciones = ["Principiante", "Intermedio", "Avanzado", "Experto"];
+        var opt = document.createElement("option");
+        var line = "";
+        for (var i = 0; i < opciones.length; i++) {
+            line += "<option value="+i+">";  
+            line += opt.innerHTML = opciones[i];
+            line += "</option>";
+        }
+        return line;
+    }
 
 function validarForm (evt) {
     evt.preventDefault();
@@ -124,12 +148,54 @@ function agregar(evt) {
 
     contenido.appendChild(divcont).appendChild(input);
 
-    if (cont > 8) {
+    if (cont > 5) {
         botplus.style.display = "none";
     } else {
         botplus.style.display = "block";
     }
 }
+
+function agregarInstrumento (evt) {
+       evt.preventDefault();
+       cont2++;
+       pos++;
+        
+        var divInput = document.createElement("div");
+            divInput.setAttribute("class", "col-md-6 col-xs-12");
+            
+        var divSelect = document.createElement("div");
+            divSelect.setAttribute("class", "col-md-4 col-xs-8 instselect");
+                    
+        var input = document.createElement("input");
+            input.setAttribute("class", "form-control");
+            input.setAttribute("id", "instrumento");
+            input.setAttribute("placeholder", "Instrumento "+cont2);
+            input.setAttribute("name", "inst"+cont2);
+            input.setAttribute("maxlength", "30");
+        
+        var select = document.createElement("select");
+            select.setAttribute("class", "form-control selcontenido");
+            select.setAttribute("name", "nivelinst"+cont2);
+            
+            contenido2.appendChild(divInput).appendChild(input);
+            contenido2.appendChild(divSelect).appendChild(select);
+            select.innerHTML = option();
+            
+      
+        if (cont2 > 3) {
+            botplus2.style.display = "none";
+        } else {
+            botplus2.style.display = "block";
+        }
+        
+        if (cont2 == 4) {
+            divInsSel[cont2 - 2].setAttribute("class","col-md-6 col-xs-12 instselect");
+            divInsSel[cont2 - 1].setAttribute("class","col-md-6 col-xs-12 instselect");
+        } else {
+            divInsSel[cont2 - 2].setAttribute("class","col-md-6 col-xs-12 instselect");
+        }
+        
+    }
 
 /*Bueno. Por default va a estar cargado con 31, entonces tengo varios escenarios posibles.
 1) Que sea Febrero normal = 28 días.

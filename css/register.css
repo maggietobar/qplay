@@ -3,7 +3,7 @@ body{
 }
 
 .jumbotronreg {
-    height: 910px;
+    height: 1090px;
     margin-bottom: 0;
     border-radius: 0;
     background-image: url(../img/mic3.jpg);
@@ -71,11 +71,10 @@ body{
     border-radius: 0;
     border-color: #94d500;
     background-color: #222;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 9px 28px;
     box-shadow: 0 0 12px #000;
     color: #94d500;
-    width: 100%;
     transition: all 0.4s ease-in-out;
 }
 
@@ -84,6 +83,13 @@ body{
     background-color: #94d500;
     box-shadow: 0 0 9px #94d500;
     color: #fff;
+}
+
+.btn-registrar:focus {
+    border-color: #94d500;
+    background-color: #222;
+    color: #fff;
+    outline: none;
 }
 
 .btn-banda {

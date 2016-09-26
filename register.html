@@ -49,15 +49,15 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
-                                <div class="error">
-                                    <p id="error-nombre"></p>
+                                <div class="erro">
+                                    <p class="error" id="error-nombre"></p>
                                 </div>
                                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30">
                             </div>
 
                             <div class="col-xs-12 col-md-6">
-                                <div class="error">
-                                    <p id="error-apellido"></p>
+                                <div class="erro">
+                                    <p class="error" id="error-apellido"></p>
                                 </div>
                                 <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30">
                             </div>
@@ -65,8 +65,8 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="error">
-                                    <p id="error-mail"></p>
+                                <div class="erro">
+                                    <p class="error" id="error-mail"></p>
                                 </div>
                                 <input type="text" name="email" class="form-control" placeholder="Email" maxlength="55">
                             </div>
@@ -74,8 +74,8 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="error">
-                                    <p id="error-pass"></p>
+                                <div class="erro">
+                                    <p class="error" id="error-pass"></p>
                                 </div>
                                 <input type="password" name="password" class="form-control" placeholder="Contraseña" maxlength="30">
                             </div>
@@ -83,8 +83,8 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="error">
-                                    <p id="error-pass2"></p>
+                                <div class="erro">
+                                    <p class="error" id="error-pass2"></p>
                                 </div>
                                 <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña" maxlength="30">
                             </div>
@@ -92,12 +92,12 @@
 
                         <div class="row">
                             <!--Esto está re flojo de papeles, preguntar-->
-                            <div class="error">
-                                <p id="error-fecha"></p>
+                            <div class="erro">
+                                <p class="error" id="error-fecha"></p>
                             </div>
                             <div class="form-group">
                                 <p class="titulos-form">Fecha de Nacimiento</p>
-                                <div class="col-xs-3">
+                                <div class="col-md-4 col-xs-12">
                                     <label for="dianac">Día</label>
                                     <select class="form-control select" name="dianac" id="dianac">
                                     <option>1</option>
@@ -134,7 +134,7 @@
                                 </select>
                                 </div>
 
-                                <div class="col-xs-6">
+                                <div class="col-md-4 col-xs-12">
                                     <label for="mesnac">Mes</label>
                                     <select class="form-control select" name="mesnac" id="mesnac">
                                     <option value = "1">Enero</option>
@@ -152,7 +152,7 @@
                                 </select>
                                 </div>
 
-                                <div class="col-xs-3">
+                                <div class="col-md-4 col-xs-12">
                                     <label for="anionac">Año</label>
                                     <input type="number" name="anionac" id="anionac" value="1993" class="form-control" placeholder="Año">
                                 </div>
@@ -181,32 +181,23 @@
                                 <p class="titulos-form">Tocás algún instrumento?</p>
 
                                 <div class="row row-padding">
-                                    <div class="col-xs-6">
-                                        <input type="text" class="form-control" name="inst1" placeholder="Instrumento" maxlength="30">
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <select class="form-control select" name="nivel-inst1">
-                              <option>Principiante</option>
-                              <option>Intermedio</option>
-                              <option>Avanzado</option>
-                              <option>Experto</option>
-                          </select>
-                                    </div>
-                                </div>
-
-                                <div class="row row-padding">
-                                    <div class="col-xs-6">
-                                        <input type="text" class="form-control" name="inst1" value="" placeholder="Instrumento">
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <select class="form-control select" name="nivel-inst1">
-                              <option>Principiante</option>
-                              <option>Intermedio</option>
-                              <option>Avanzado</option>
-                              <option>Experto</option>
-                          </select>
-                                    </div>
-                                </div>
+                          <div id="instrument">
+                            <div class="col-md-6 col-xs-12">
+                                  <input type="text" class="form-control" name="inst1" placeholder="Instrumento 1" maxlength="30">
+                            </div>
+                            <div class="col-md-4 col-xs-8 instselect">
+                              <select class="form-control selcontenido" name="nivelinst1">
+                                <option value="0">Principiante</option>
+                                <option value="1">Intermedio</option>
+                                <option value="2">Avanzado</option>
+                                <option value="3">Experto</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-xs-4">
+                             <button type="button" class="btn btn-banda" id="suminst"><i class="fa fa-plus-circle fa-lg"></i></button>
+                          </div>
+                        </div>
 
                             </div>
                         </div>
@@ -215,7 +206,7 @@
 
                             <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
 
-                                <button type="submit" class="btn btn-primary btn-registrar" id="registrar" name="button">Registrarme</button>
+                                <button type="submit" class="btn btn-primary btn-registrar center-block" id="registrar" name="button">Registrarme</button>
 
                             </div>
                         </div>
