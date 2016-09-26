@@ -1,5 +1,5 @@
 
-var cont, contenido, botplus, hayErrores, form, mes, dia, anio;
+var cont, contenido, botplus, hayErrores, form, mes, dia, anio, registrar, xmlhttp1, xmlhttp2, usuarios;
 
 window.onload = function() {
   cont = 1;
@@ -16,6 +16,15 @@ window.onload = function() {
 
   mes.addEventListener('change', validarDias);
   anio.addEventListener('change', validarDias);
+
+
+ // ARRANCA AJAX
+
+ //Guardo el botón enviar en una variable
+ registrar = document.getElementById('registrar');
+// e de evento
+ registrar.addEventListener('click', ajax);
+
 };
 
 function validarForm (evt) {
@@ -23,7 +32,7 @@ function validarForm (evt) {
     console.log('apretó submit');
     if (!validaciones()) {
         console.log('No hubo errores');
-        form.submit();
+        // form.submit();
     }
 }
 
@@ -210,3 +219,67 @@ function validarDias() {
     }
   }
 }
+
+// FUNCIONES AJAX
+
+function ajax (e){
+  e.preventDefault();
+  document.getElementById('errores').innerHTML = "";
+  enviarDato();
+
+
+}
+
+ //Tengo que hacer dos llamados distintos a Ajax, uno para enviar el usuario nuevo y otro para llamar al número de usuarios.
+ function enviarDato() {
+   if(errores[0] === undefined){
+     //LLamada Ajax
+     var xmlhttp1 = new XMLHttpRequest();
+     xmlhttp1.onreadystatechange = function(){
+       if(xmlhttp1.readyState == 4 && xmlhttp1.status == 200){
+         console.log("cargo bien");
+         recibirNumero();
+       }
+     };
+
+     xmlhttp1.open("GET", "https://sprint.digitalhouse.com/nuevoUsuario", true);
+     xmlhttp1.send();
+
+   }else{
+     errores.forEach(function(error){
+       document.getElementById('errores').innerHTML += error+",<br>";
+     });
+   }
+ }
+
+ function recibirNumero() {
+   if(errores[0] === undefined){
+     //LLamada Ajax
+     var xmlhttp2 = new XMLHttpRequest();
+     xmlhttp2.onreadystatechange = function(){
+       if(xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
+         var usuarios = JSON.parse(xmlhttp2.responseText);
+         console.log(usuarios);
+         //Devuelve 2 Objetos {Errores y Contenido}
+         console.log("Cargo 2 bien");
+         usuarios = usuarios.cantidad;
+         console.log(usuarios);
+
+         mostrarUsuarios(usuarios);
+       }
+     };
+   xmlhttp2.open("GET", "https://sprint.digitalhouse.com/getUsuarios", true);
+   xmlhttp2.send();
+   }else{
+     errores.forEach(function(error){
+       document.getElementById('errores').innerHTML += error+",<br>";
+     });
+   }
+ }
+
+ function mostrarUsuarios(usuarios) {
+   document.forms[0].style.display = 'none';
+   document.getElementById('numUsuarios').style.display = 'block';
+   document.getElementById('h4numUsuarios').innerText += ' ' + usuarios + '.';
+   window.scrollTo(0, 0);
+ }
