@@ -1,5 +1,5 @@
 
-var cont, contenido, botplus, hayErrores, form;
+var cont, contenido, botplus, hayErrores, form, mes, dia, anio;
 
 window.onload = function() {
   cont = 1;
@@ -9,6 +9,13 @@ window.onload = function() {
   form = document.forms[0];
   botplus.addEventListener("click", agregar);
   form.addEventListener('submit', validarForm);
+
+  dia = document.getElementById('dianac');
+  mes = document.getElementById('mesnac');
+  anio = document.getElementById('anionac');
+
+  mes.addEventListener('change', validarDias);
+  anio.addEventListener('change', validarDias);
 };
 
 function validarForm (evt) {
@@ -124,4 +131,82 @@ function agregar(evt) {
     } else {
         botplus.style.display = "block";
     }
+}
+
+/*Bueno. Por default va a estar cargado con 31, entonces tengo varios escenarios posibles.
+1) Que sea Febrero normal = 28 días.
+2) Que sea Febrero bisiesto = 29 días.
+3) Que sea Abril, Junio, Septiembre o Noviembre = 30 días.
+4) Que tenga 31.
+
+Todo piola, ameo, PEEEERO nada nos garantiza cuántos días va a tener cargados, porque si alguien puso febrero al toque y le carga 28, después para poner Diciembre, va a tener que agregar 3. SI SEÑOR, Y ENTONCES HAY VARIOS QUILOMBOS NUEVOS.
+
+Sabemos dos cosas:
+
+- Nunca va a tener más de 31
+- Nunca va a tener menos de 28.
+
+Maldita sea Homero, eres un genio. Años de estudiar informática para esto, bueno, no tan rápido, cerebrito. Esto sirve.
+*/
+
+function validarDias() {
+    var esBisiesto = false;
+    var count = 0;
+    var opcionNueva = document.createElement("option");
+// Aunque usted no lo crea, el 2000  fue bisiesto, porque uno cada 400 años toca, aunque los múltiplos de 100 no lo son. Entonces primero chequeo que sea múltiplo de 4 pero no a la vez de 100. Después me fijo, si es múltiplo de 400, le mando cumbia igual.
+
+    if ((anio.value % 4 === 0 && anio.value % 100 !== 0) || anio.value % 400 === 0) {
+        esBisiesto = true;
+    }
+
+// Si es febrero y no bisiesto, va a tener 28. O sea que solo puede tener más valores, porque si aprendimos algo es que no hay meses de menos de 28 días
+
+    if (mes.value == '2' && !esBisiesto) {
+        while (dia.length > 28) {
+            dia.remove(dia.length - 1);
+        }
+    }
+
+//Ahora, febrero bisiesto tiene un tema. En el select pueden haber 28, 29 (Complicado, pero sí), 30 o 31.
+
+    if (mes.value == '2' && esBisiesto) {
+      // Si tiene más de 29, voy borrando el último hasta que tenga 29.
+        if (dia.length > 29) {
+            while (dia.length > 29) {
+                dia.remove(dia.length - 1);
+            }
+            // Si tiene menos de 29, solo puede tener 28, asique le agrego el 29 y yassstá.
+        } else {
+            opcionNueva.text = "29";
+            dia.add(opcionNueva);
+        }
+    }
+
+    //Acá se pone más interesante que la final del mundial. Los meses de 30 días. Podemos venir con 28, 29 o 31.
+
+    if (mes.value == '4' || mes.value == '6' || mes.value == '9' || mes.value == '11'){
+      //Si tiene más de 30, tiene 31 sí o sí, asique con borrar el último, está.
+      if (dia.length > 30){
+        dia.remove(dia.length-1);
+      } else {
+        /*Acá puede tener 28 o 29. Y eso es una cagada.
+        Bueno. Si hacemos dia.length nos va a devolver la cantidad, que casualmente quiere decir que el último VALOR cargado, es ese número, pero está cargado en un índice que es dia.length-1*/
+        count = dia.length;
+        while (count <= 29){
+          opcionNueva.text = dia.length + 1;
+          dia.add(opcionNueva);
+          count++;
+        }
+    }
+  }
+
+  //Este es facil, porque es cuestión de agregar hasta que haya 31.
+  if (mes.value == '1' || mes.value == '3' || mes.value == '5' || mes.value == '7' || mes.value == '8' || mes.value == '10' || mes.value == '12'){
+    count = dia.length;
+    while (count < 31){
+      opcionNueva.text = dia.length + 1;
+      dia.add(opcionNueva);
+      count++;
+    }
+  }
 }
