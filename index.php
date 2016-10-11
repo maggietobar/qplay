@@ -23,14 +23,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand font-kaushan logo" href="index.html">QPlay</a>
+      <a class="navbar-brand font-kaushan logo" href="index.php">QPlay</a>
       <p class="navbar-text font-farsan">Tu musica!</p>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-nav" href="login.html">Conectate <i class="fa fa-link"></i></a></li>
-        <li><a class="btn btn-nav" href="register.html">Registrate <i class="fa fa-book"></i></a></li>
+        <li><a class="btn btn-nav" href="login.php">Conectate <i class="fa fa-link"></i></a></li>
+        <li><a class="btn btn-nav" href="register.php">Registrate <i class="fa fa-book"></i></a></li>
       </ul>
       <!--form class="navbar-form navbar-right">
         <div class="form-group">
@@ -73,7 +73,7 @@
   <div class="row image">
     <div class="col-sm-6">
       <h3 class="text-center">Grupos</h3>
-      
+
       <!--div class="container-fluid">
         <div class="row">
           <div class="col-md-12 center-block"-->
@@ -83,7 +83,7 @@
           <!--/div>
         </div>
       </div>
-      
+
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 center-block"-->
@@ -92,7 +92,7 @@
             <img src="img/img6.jpg" alt="..." class="img-square" width="160" height="160">
           <!--/div>
         </div>
-      </div-->      
+      </div-->
 
     </div>
     <div class="col-sm-6">
@@ -151,11 +151,11 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="list-inline text-center">
-        <li><a href="login.html" class="footlink">Conectate</a></li>
+        <li><a href="login.php" class="footlink">Conectate</a></li>
         <li><p></p></li>
-        <li><a href="register.html" class="footlink">Registrate</a></li>
+        <li><a href="register.php" class="footlink">Registrate</a></li>
         <li><p></p></li>
-        <li><a href="faq.html" class="footlink">Preguntas (FAQs)</a></li>
+        <li><a href="faq.php" class="footlink">Preguntas (FAQs)</a></li>
       </ul>
     </div>
   </div>

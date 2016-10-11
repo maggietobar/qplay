@@ -25,14 +25,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand font-kaushan logo" href="index.html">QPlay</a>
+      <a class="navbar-brand font-kaushan logo" href="index.php">QPlay</a>
       <p class="navbar-text font-farsan">Tu musica!</p>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-nav" href="login.html">Conectate <i class="fa fa-link"></i></a></li>
-        <li><a class="btn btn-nav" href="registro.html">Registrate <i class="fa fa-book"></i></a></li>
+        <li><a class="btn btn-nav" href="login.php">Conectate <i class="fa fa-link"></i></a></li>
+        <li><a class="btn btn-nav" href="register.php">Registrate <i class="fa fa-book"></i></a></li>
       </ul>
       <!--form class="navbar-form navbar-right">
         <div class="form-group">
@@ -53,7 +53,7 @@
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <h3 class="text-center font-comfortaa logtit">Recuperar Contraseña</h3>
           <form class="form">
-            
+
             <div class="form-group">
               <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
               <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
@@ -62,8 +62,8 @@
               <button type="submit" class="btn btn-login center-block">Enviar</button>
           </form>
         </div>
-    </div>    
-  </div>      
+    </div>
+  </div>
 </div>
 
 
@@ -72,13 +72,13 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="list-inline text-center">
-        <li><a href="login.html" class="footlink">Conectate</a></li>
+        <li><a href="login.php" class="footlink">Conectate</a></li>
         <li><p></p></li>
-        <li><a href="register.html" class="footlink">Registrate</a></li>
+        <li><a href="register.php" class="footlink">Registrate</a></li>
         <li><p></p></li>
-        <li><a href="faq.html" class="footlink">Preguntas (FAQs)</a></li>
+        <li><a href="faq.php" class="footlink">Preguntas (FAQs)</a></li>
       </ul>
-    </div>  
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -116,7 +116,7 @@
 
 <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/botcolaps.js"></script>   
-    
+<script type="text/javascript" src="js/botcolaps.js"></script>
+
 </body>
 </html>
