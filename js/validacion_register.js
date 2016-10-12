@@ -55,7 +55,7 @@ window.onload = function () {
         var input = document.createElement("input");
             input.setAttribute("class", "form-control");
             input.setAttribute("placeholder", "Banda " + cont);
-            input.setAttribute("name", "banda" + cont);
+            input.setAttribute("name", "bandas[]");
             input.setAttribute("maxlength", "30");
     
         contenido.appendChild(divcont).appendChild(input);
@@ -85,11 +85,11 @@ window.onload = function () {
             input.setAttribute("class", "form-control");
             input.setAttribute("id", "instrumento");
             input.setAttribute("placeholder", "Instrumento "+cont2);
-            input.setAttribute("name", "inst"+cont2);
+            input.setAttribute("name", "inst[]");
             input.setAttribute("maxlength", "30");
         var select = document.createElement("select");
             select.setAttribute("class", "form-control selcontenido");
-            select.setAttribute("name", "nivelinst"+cont2);
+            select.setAttribute("name", "nivelinst[]");
 
             contenido2.appendChild(divInput).appendChild(input);
             contenido2.appendChild(divSelect).appendChild(select);
@@ -116,12 +116,10 @@ window.onload = function () {
 
     function validarForm (evt) {
         evt.preventDefault();
-       // alto += 60;
         if (!validaciones()) {
-            ajax();
-        } /*else {
-            jumbotron.style.height = alto+"px";
-        }*/
+           // ajax();
+           form.submit();
+        } 
     } // fin validar form 
    
    function calcularEdad(diaNac, mesNac, anioNac) {
@@ -286,7 +284,7 @@ Maldita sea Homero, eres un genio. Años de estudiar informática para esto, bue
       }
     } // fin validar dias   
    
-
+/*
     function ajax (){
         enviarDato();
     } // fin ajax
@@ -324,7 +322,9 @@ Maldita sea Homero, eres un genio. Años de estudiar informática para esto, bue
        document.getElementById('numUsuarios').style.display = 'block';
        document.getElementById('h4numUsuarios').innerText += ' ' + usuarios + '.';
        window.scrollTo(0, 0);
-    } // fin mostrar usuario    
+    } // fin mostrar usuario  
+    */
     
     
 }; // fin de Onload
+

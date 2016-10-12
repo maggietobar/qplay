@@ -5,18 +5,28 @@ class Usuario {
 	private $id;
 	private $nombre;
 	private $apellido;
-	private $sexo;
+	private $email;
 	private $password;
-	private $mail;
+	private $fecha;
+	private $bandas = [];
+	private $instrumentos = [];
+	private $nivel = [];
+//	private $sexo;
+	
+	
 
 	public function __construct(Array $miUsuario)
 	{
 		$this->id = $miUsuario["id"];
 		$this->nombre = $miUsuario["nombre"];
 		$this->apellido = $miUsuario["apellido"];
+		$this->email = $miUsuario["email"];
 		$this->password = $miUsuario["password"];
-		$this->mail = $miUsuario["mail"];
-		$this->sexo = $miUsuario["sexo"];
+		$this->fecha = $miUsuario["dianac"]."-".$miUsuario["mesnac"]."-".$miUsuario["anionac"];
+		$this->bandas = $miUsuario["bandas"];
+		$this->instrumentos = $miUsuario["inst"];
+		$this->nivel = $miUsuario["nivelinst"];
+	//	$this->sexo = $miUsuario["sexo"];
 	}
 
 	public function getNombre() {
@@ -29,7 +39,7 @@ class Usuario {
 		return $this->id;
 	}
 	public function getMail() {
-		return $this->mail;
+		return $this->email;
 	}
 	public function getSexo() {
 		return $this->sexo;
@@ -37,6 +47,19 @@ class Usuario {
 	public function getPassword() {
 		return $this->password;
 	}
+	public function getFecha() {
+		return $this->fecha;
+	}
+	public function getBandas() {
+		return $this->bandas;
+	}
+	public function getInstrumento() {
+		return $this->instrumentos;
+	}
+	public function getNivel() {
+		return $this->nivel;
+	}	
+	
 	public function setNombre($nombre)
 	{
 		$this->nombre = $nombre;
@@ -45,18 +68,18 @@ class Usuario {
 	{
 		$this->apellido = $apellido;
 	}
-	public function setMail($mail)
+	public function setMail($email)
 	{
-		$this->mail = $mail;
+		$this->email = $email;
 	}
 	public function setPassword($password)
 	{
 		$this->password = password_hash($password, PASSWORD_DEFAULT);
 	}
-	public function setSexo($sexo)
+	/*public function setSexo($sexo)
 	{
 		$this->sexo = $sexo;
-	}
+	}*/
 	public function setId($id)
 	{
 		$this->id = $id;

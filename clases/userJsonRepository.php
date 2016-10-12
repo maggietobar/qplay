@@ -36,12 +36,17 @@ class UserJSONRepository extends UserRepository {
 	private function usuarioToArray(Usuario $miUsuario) {
 		$usuarioArray = [];
 
+		$usuarioArray["id"] = $miUsuario->getId();
 		$usuarioArray["nombre"] = $miUsuario->getNombre();
 		$usuarioArray["apellido"] = $miUsuario->getApellido();
+		$usuarioArray["email"] = $miUsuario->getMail();
 		$usuarioArray["password"] = $miUsuario->getPassword();
-		$usuarioArray["mail"] = $miUsuario->getMail();
-		$usuarioArray["sexo"] = $miUsuario->getSexo();
-		$usuarioArray["id"] = $miUsuario->getId();
+		$usuarioArray["fecha"] = $miUsuario->getFecha();
+		$usuarioArray["bandas"] = $miUsuario->getBandas();
+	    $usuarioArray["instrumentos"] = $miUsuario->getInstrumento();
+	    $usuarioArray["nivel"] = $miUsuario->getNivel();
+		//$usuarioArray["sexo"] = $miUsuario->getSexo();
+		
 
 
 		return $usuarioArray;

@@ -37,27 +37,29 @@ class Validar {
         {
             $errores[] = "Falta el apellido";
         }
+        if ($miUsuario["email"] == "")
+        {
+            $errores[] = "Falta el mail";
+        }
+        
         if (trim($miUsuario["password"]) == "")
         {
             $errores[] = "Falta la pass";
         }
-        if (trim($miUsuario["cpass"]) == "")
+        if (trim($miUsuario["password2"]) == "")
         {
-            $errores[] = "Falta el cpass";
+            $errores[] = "Falta confirmar su contraseña";
         }
-        if ($miUsuario["password"] != $miUsuario["cpass"])
+        if ($miUsuario["password"] != $miUsuario["password2"])
         {
             $errores[] = "Pass y Cpass son distintas";
         }
-        if ($miUsuario["mail"] == "")
-        {
-            $errores[] = "Falta el mail";
-        }
-        if (!filter_var($miUsuario["mail"], FILTER_VALIDATE_EMAIL))
+
+        if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
         {
             $errores[] = "El mail tiene forma fea";
         }
-        if ($this->userRepository->existeElMail($miUsuario["mail"]))
+        if ($this->userRepository->existeElMail($miUsuario["email"]))
         {
             $errores[] = "Usuario ya registrado";
         }

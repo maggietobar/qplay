@@ -1,3 +1,42 @@
+<?php
+	require_once("soporte.php");
+
+	if ($auth->estaLogueado())
+	{
+		header("location:index.php");exit;
+	}
+
+	$pNombre = "";
+	$pApellido = "";
+	$pMail = "";
+
+	$sexos = ["Masculino", "Femenino", "Otro"];
+
+	if ($_POST)
+	{
+		$pNombre = $_POST["nombre"];
+		$pApellido = $_POST["apellido"];
+		$pMail = $_POST["mail"];
+		//Acá vengo si me enviaron el form
+
+		//Validar
+		$errores = $validar->validarUsuario($_POST);
+
+		// Si no hay errores....
+		if (empty($errores))
+		{
+			$miUsuarioArr = $_POST;
+			$usuario = new Usuario($_POST);
+			$usuario->setPassword($_POST["password"]);
+			// Guardar al usuario en un JSON
+			$repositorio->getUserRepository()->guardarUsuario($usuario);
+			$usuario->guardarImagen($usuario);
+			// Reenviarlo a la felicidad
+			header("location:index.php");exit;
+		}
+	}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -43,7 +82,18 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
                     <h3 class="text-center font-comfortaa regtit">Registro</h3>
-                    <form id="formreg" class="form" action="" method="post">
+                    <?php if (!empty($errores)) { ?>
+			        	<div style="width:300px;background-color:red">
+        					<ul>
+        						<?php foreach ($errores as $error) { ?>
+        							<li>
+        								<?php echo $error ?>
+        							</li>
+        						<?php } ?>
+        					</ul>
+        				</div>
+		    	    <?php } ?>
+                    <form id="formreg" class="form" action="register.php" method="post">
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <div class="erro">
@@ -162,7 +212,7 @@
                                 <div class="row row-padding">
                                     <div id="bandas">
                                         <div class="col-xs-12 col-md-4">
-                                            <input type="text" class="form-control" id="band" name="banda1" placeholder="Banda 1" maxlength="30">
+                                            <input type="text" class="form-control" id="band" name="bandas[]" placeholder="Banda 1" maxlength="30">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-md-4">
@@ -180,10 +230,10 @@
                                 <div class="row row-padding">
                           <div id="instrument">
                             <div class="col-md-6 col-xs-12">
-                                  <input type="text" class="form-control" name="inst1" placeholder="Instrumento 1" maxlength="30">
+                                  <input type="text" class="form-control" name="inst[]" placeholder="Instrumento 1" maxlength="30">
                             </div>
                             <div class="col-md-4 col-xs-8 instselect">
-                              <select class="form-control selcontenido" name="nivelinst1">
+                              <select class="form-control selcontenido" name="nivelinst[]">
                                 <option value="0">Principiante</option>
                                 <option value="1">Intermedio</option>
                                 <option value="2">Avanzado</option>
@@ -210,7 +260,7 @@
 
                     </form>
 
-                    <div class="jumbotronlog" id="numUsuarios" style="display:none">
+                    <!-- div class="jumbotronlog" id="numUsuarios" style="display:none">
                   <div class="container-fluid login">
                     <div class="row">
                       <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
@@ -219,7 +269,7 @@
                         </div>
                     </div>
                   </div>
-                </div>
+                </div -->
 
                 </div>
             </div>
