@@ -123,6 +123,14 @@ body{
   font-weight: normal;
 }
 
+.sin-padd-derecha{
+  padding-right: 0;
+}
+
+.sin-padd-izquierda{
+  padding-left: 0;
+}
+
 @media only screen and (max-width:991px) {
     .jumbotronreg {
         height: 1190px;

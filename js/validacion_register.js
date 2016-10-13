@@ -166,6 +166,7 @@ window.onload = function () {
         } else if (!mailreg.test(form.elements.email.value)) {
             cargarError('error-mail', 'El email no es válido');
             hayErrores = true;
+	    form.elements.email.value = ""
         } else {
             cargarError('error-mail', '');
         }
@@ -177,6 +178,7 @@ window.onload = function () {
         } else if (!passreg.test(form.elements.password.value)) {
             cargarError('error-pass', 'La contraseña debe tener al menos una mayúscula, una minúscula y un número');
             hayErrores = true;
+	    form.elements.password.value = "";
         } else {
             cargarError('error-pass', '');
         }
@@ -187,6 +189,8 @@ window.onload = function () {
         } else if (form.elements.password.value != form.elements.password2.value) {
             cargarError('error-pass2', 'La contraseña y su confirmación son distintas');
             hayErrores = true;
+	    form.elements.password.value = "";
+	    form.elements.password2.value = "";
         } else {
             cargarError('error-pass2', '');
         }

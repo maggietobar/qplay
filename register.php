@@ -95,18 +95,18 @@
 		    	    <?php } ?>
                     <form id="formreg" class="form" action="register.php" method="post">
                         <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6 sin-padd-izquierda">
                                 <div class="erro">
                                     <p class="error" id="error-nombre"></p>
                                 </div>
-                                <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30">
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30" value = "<?php echo  isset($_POST['nombre']) ? $_POST['nombre'] : "" ?>">
                             </div>
-
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6 sin-padd-derecha">
                                 <div class="erro">
                                     <p class="error" id="error-apellido"></p>
                                 </div>
-                                <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30">
+                                <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30" value = "<?php echo  isset($_POST['apellido']) ? $_POST['apellido'] : "" ?>
+"
                             </div>
                         </div>
 
@@ -115,7 +115,8 @@
                                 <div class="erro">
                                     <p class="error" id="error-mail"></p>
                                 </div>
-                                <input type="text" name="email" class="form-control" placeholder="Email" maxlength="55">
+                                <input type="text" name="email" class="form-control" placeholder="Email" maxlength="55" value = "<?php echo  isset($_POST['email']) ? $_POST['email'] : "" ?>
+">
                             </div>
                         </div>
 
@@ -146,7 +147,7 @@
                                 <p class="titulos-form">Fecha de Nacimiento</p>
                                 <div class="col-md-4 col-xs-12">
                                     <label for="dianac">Día</label>
-                                    <select class="form-control select" name="dianac" id="dianac">
+                                    <select class="form-control select" name="dianac" id="dianac" value = "<?php echo isset($_POST['dianac']) ? $_POST['dianac'] : "" ?>">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -183,7 +184,7 @@
 
                                 <div class="col-md-4 col-xs-12">
                                     <label for="mesnac">Mes</label>
-                                    <select class="form-control select" name="mesnac" id="mesnac">
+                                    <select class="form-control select" name="mesnac" id="mesnac" value = "<?php echo  isset($_POST['dianac']) ? $_POST['dianac'] : "" ?>">
                                     <option value = "1">Enero</option>
                                     <option value = "2">Febrero</option>
                                     <option value = "3">Marzo</option>
@@ -201,7 +202,7 @@
 
                                 <div class="col-md-4 col-xs-12">
                                     <label for="anionac">Año</label>
-                                    <input type="number" name="anionac" id="anionac" value="1993" class="form-control" placeholder="Año">
+                                    <input type="number" name="anionac" id="anionac" value = "<?php echo  isset($_POST['anionac']) ? $_POST['anionac'] : "" ?>" class="form-control" placeholder="Año">
                                 </div>
                             </div>
                         </div>

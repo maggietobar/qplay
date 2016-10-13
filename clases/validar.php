@@ -41,7 +41,7 @@ class Validar {
         {
             $errores[] = "Falta el mail";
         }
-        
+
         if (trim($miUsuario["password"]) == "")
         {
             $errores[] = "Falta la pass";
@@ -58,10 +58,12 @@ class Validar {
         if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
         {
             $errores[] = "El mail tiene forma fea";
+            unset($_POST['email']);
         }
         if ($this->userRepository->existeElMail($miUsuario["email"]))
         {
             $errores[] = "Usuario ya registrado";
+            unset($_POST['email']);
         }
         return $errores;
     }
