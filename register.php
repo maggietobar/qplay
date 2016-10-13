@@ -202,7 +202,7 @@
 
                                 <div class="col-md-4 col-xs-12">
                                     <label for="anionac">Año</label>
-                                    <input type="number" name="anionac" id="anionac" value = "<?php echo  isset($_POST['anionac']) ? $_POST['anionac'] : "" ?>" class="form-control" placeholder="Año">
+                                    <input type="number" name="anionac" id="anionac" value = "<?php echo  isset($_POST['anionac']) ? $_POST['anionac'] : "" ?>" class="form-control" placeholder="Año" min = "1930" max = "2016">
                                 </div>
                             </div>
                         </div>
