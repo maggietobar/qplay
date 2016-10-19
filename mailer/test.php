@@ -2,29 +2,29 @@
 
 require_once '_lib/class.phpmailer.php';
 
-$mail = new PHPMailer();
+function recuperar_contraseña($mail, $idPass){
 
-//Luego tenemos que iniciar la validación por SMTP:
-$mail->IsSMTP();
-$mail->SMTPAuth = true;
-$mail->Host = "smtp.gmail.com"; // SMTP a utilizar. Por ej. smtp.elserver.com
-$mail->Username = "sebas.crosta@gmail.com"; // Correo completo a utilizar
-$mail->Password = "sebas628879196"; // Contraseña
-$mail->Port = 25; // Puerto a utilizar
+    $mail = new PHPMailer();
 
-$mail->From = "sebas.crosta@gmail.com"; // Desde donde enviamos (Para mostrar)
-$mail->FromName = "Sebastian crosta";
+    $mail->IsSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Host = "smtp.gmail.com"; // SMTP a utilizar. Por ej. smtp.elserver.com
+    $mail->Username = "qplay.contacto@gmail.com"; // Correo completo a utilizar
+    $mail->Password = "contactoqplay"; // Contraseña
+    $mail->Port = 25; // Puerto a utilizar
 
+    $mail->From = "qplay.contacto@gmail.com"; // Desde donde enviamos (Para mostrar)
+    $mail->FromName = "Qplay";
+    //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
 
-
-//Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
-$mail->AddAddress("sebas.crosta@gmail.com"); // Esta es la dirección a donde enviamos
-$mail->IsHTML(true); // El correo se envía como HTML
-$mail->Subject = "Titulo"; // Este es el titulo del email.
-$body = "Hola mundo. Esta es la primer línea<br />";
-$body .= "Acá continuo el <strong>mensaje</strong>";
-$mail->Body = $body; // Mensaje a enviar
-$exito = $mail->Send(); // Envía el correo.
+    $mail->AddAddress($mail); // Esta es la dirección a donde enviamos
+    $mail->IsHTML(true); // El correo se envía como HTML
+    $mail->Subject = "Restablecimiento de contraseña"; // Este es el titulo del email.
+    $body = "Hola!<br /><br /> Para restablecer tu contraseña entrá al siguiente link <br />";
+    $body .= "Acá va el link. <br /><br /> Saludos! <br /> <b>Qplay</b>";
+    $mail->Body = $body; // Mensaje a enviar
+    $exito = $mail->Send(); // Envía el correo.
+}
 
 //También podríamos agregar simples verificaciones para saber si se envió:
 if($exito){

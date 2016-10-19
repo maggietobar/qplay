@@ -11,6 +11,7 @@ class Usuario {
 	private $bandas = [];
 	private $instrumentos = [];
 	private $nivel = [];
+    private $idPass;
 //	private $sexo;
 	
 	
@@ -26,6 +27,7 @@ class Usuario {
 		$this->bandas = $miUsuario["bandas"];
 		$this->instrumentos = $miUsuario["inst"];
 		$this->nivel = $miUsuario["nivelinst"];
+        $this->idPass = $this->setIdPass();
 	//	$this->sexo = $miUsuario["sexo"];
 	}
 
@@ -58,7 +60,10 @@ class Usuario {
 	}
 	public function getNivel() {
 		return $this->nivel;
-	}	
+	}
+	public function getIdPass(){
+	    return $this->idPass;
+    }
 	
 	public function setNombre($nombre)
 	{
@@ -84,6 +89,15 @@ class Usuario {
 	{
 		$this->id = $id;
 	}
+
+	public function setIdPass(){
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $this->idPass = '';
+        for ($i = 0; $i < 15; $i++) {
+            $this->idPass .= $characters[rand(0, $charactersLength - 1)];
+        }
+    }
 
 	public function guardarImagen()
 	{

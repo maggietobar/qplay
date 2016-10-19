@@ -2,7 +2,15 @@
 
 if ($_POST){
 
-  $repositorio = new UserJSONRepository();
+
+
+  if (!$repositorio->getUserRepository()->existeElMail($_POST["mail"])){
+    $errorForgot = 'El mail no existe';
+  } else{
+    $miUsuario = $repositorio->getUserRepository()->getUsuarioByMail($_POST["mail"]);
+
+  }
+
 
 
 }
