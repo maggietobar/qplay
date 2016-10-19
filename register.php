@@ -82,17 +82,15 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
                     <h3 class="text-center font-comfortaa regtit">Registro</h3>
-                    <?php if (!empty($errores)) { ?>
-			        	<div style="width:300px;background-color:red">
-        					<ul>
-        						<?php foreach ($errores as $error) { ?>
-        							<li>
-        								<?php echo $error ?>
-        							</li>
-        						<?php } ?>
-        					</ul>
-        				</div>
-		    	    <?php } ?>
+                    
+                        <?php if (!empty($errores)) { ?>
+			               <div class="errorph">
+        			          <?php foreach ($errores as $error) { ?>
+        					    <p class="errcript"><?php echo $error ?></p>
+        				      <?php } ?>
+        	               </div>
+		    	        <?php } ?>
+		    	        
                     <form id="formreg" class="form" action="register.php" method="post">
                         <div class="row">
                             <div class="col-xs-12 col-md-6 sin-padd-izquierda">
@@ -330,7 +328,7 @@
     <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/botcolaps.js"></script>
-    <script type="text/javascript" src="js/validacion_register.js"></script>
+    <!-- script type="text/javascript" src="js/validacion_register.js"></script -->
 
 </body>
 

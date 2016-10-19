@@ -58,6 +58,15 @@
 
 /* efecto cuando se produce un error en el campo */
 
+.errorph {
+    border: 1px solid #e62e00;
+    border-radius: 0;
+    padding-left: 12px;
+    padding-top: 10px;
+    background-color: #330000;
+    color: #e62e00;
+}
+
 .errcript {
     font-size: 15px;
     color: #e62e00;
@@ -66,7 +75,7 @@
 .onerror > input {
     font-size: 17px;
     border-color: #e62e00;
-    background-color: #4d0000;
+    background-color: #330000;
     color: #e62e00;
     box-shadow: 0 0 12px #000;
 }
@@ -75,6 +84,8 @@
     border: 1px solid #e62e00;
     box-shadow: 0 0 12px #e62e00;
 }
+
+
 
 /*-------------------------------------------fin efecto-*/
 

@@ -1,3 +1,31 @@
+<?php
+	require_once("soporte.php");
+
+	if ($auth->estaLogueado())
+	{
+		header("location:index.php");exit;
+	}
+
+	if ($_POST)
+	{
+		//Validar
+		$errores = $validar->validarLogin($_POST);
+
+		// Si no hay errores....
+		if (empty($errores))
+		{
+		/*	$miUsuarioArr = $_POST;
+			$usuario = new Usuario($_POST);
+			$usuario->setPassword($_POST["password"]);
+			// Guardar al usuario en un JSON
+			$repositorio->getUserRepository()->guardarUsuario($usuario);
+			$usuario->guardarImagen($usuario);*/
+			// Reenviarlo a la felicidad
+			header("location:index.php");exit;
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -52,18 +80,26 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <h3 class="text-center font-comfortaa logtit">Iniciar Sesión</h3>
-
-          <form class="form" id="form" action="" method="post">
+          
+           <?php if (!empty($errores)) { ?>
+			       <div class="errorph">
+        			  <?php foreach ($errores as $error) { ?>
+        					<p class="errcript"><?php echo $error ?></p>
+        				<?php } ?>
+        	   </div>
+		    	 <?php } ?> 
+		    	   
+          <form class="form" id="form" action="login.php" method="post">
 
             <div class="error"><p class="errcript"></p></div>
             <div class="form-group">
               <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
-              <input type="text" class="form-control" id="mail" placeholder="Email" maxlength="55">
+              <input type="text" class="form-control" id="mail" name="mail" placeholder="Email" maxlength="55" value="<?php echo isset($_POST['mail']) ? $_POST['mail'] : "" ?>">
             </div>
             <div class="error"><p class="errcript"></p></div>
             <div class="form-group">
               <!-- <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label> -->
-              <input type="password" class="form-control" id="pass" placeholder="Contraseña" maxlength="40">
+              <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" maxlength="40">
             </div>
 
             <div class="checkbox">
@@ -129,7 +165,7 @@
 <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/botcolaps.js"></script>
-<script type="text/javascript" src="js/logval.js"></script>
+<!-- script type="text/javascript" src="js/logval.js"></script -->
 
 </body>
 </html>

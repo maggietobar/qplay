@@ -25,65 +25,72 @@ class Validar {
 
 	}
 
-    public function validarUsuario($miUsuario)
-    {
+    public function validarUsuario($miUsuario)  {
+        
         $errores = [];
 
         if (trim($miUsuario["nombre"]) == "")
         {
-            $errores[] = "Falta el nombre";
+            $errores[] = "<b>ERROR!</b> El campo Nombre no puede estar vacio.";
         }
         if (trim($miUsuario["apellido"]) == "")
         {
-            $errores[] = "Falta el apellido";
+            $errores[] = "<b>ERROR!</b> El campo Apellido no puede estar vacio.";
         }
         if ($miUsuario["email"] == "")
         {
-            $errores[] = "Falta el mail";
+            $errores[] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
         }
 
         if (trim($miUsuario["password"]) == "")
         {
-            $errores[] = "Falta la pass";
+            $errores[] = "<b>ERROR!</b> El campo Contraseña no puede estar vacio.";
         }
         if (trim($miUsuario["password2"]) == "")
         {
-            $errores[] = "Falta confirmar su contraseña";
+            $errores[] = "<b>ERROR!</b> Tiene que confirmar su contraseña.";
         }
         if ($miUsuario["password"] != $miUsuario["password2"])
         {
-            $errores[] = "Pass y Cpass son distintas";
+            $errores[] = "<b>ERROR!</b> La contraseña y su confimacion no pueden ser distintas.";
         }
 
         if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
         {
-            $errores[] = "El mail tiene forma fea";
+            $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
             unset($_POST['email']);
         }
         if ($this->userRepository->existeElMail($miUsuario["email"]))
         {
-            $errores[] = "Usuario ya registrado";
+            $errores[] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
             unset($_POST['email']);
         }
         return $errores;
     }
 
-    function validarLogin()
-    {
+    function validarLogin() {
+        
         $errores = [];
+        $passreg = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/";
 
         if (trim($_POST["mail"]) == "") {
-            $errores[] = "No pusiste email";
+            $errores[] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
+        } else if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {    
+            $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
         } else if (!$this->userRepository->existeElMail($_POST["mail"])) {
-            $errores[] = "El mail no existe";
-        } else if (!$this->userRepository->usuarioValido($_POST["mail"], $_POST["password"])) {
-            $errores [] = "El usuario no es valido";
+            $errores[] = "<b>ERROR!</b> El Email ingresado no pertenece a una cuenta registrada.";
+        } else if (!$this->userRepository->usuarioValido($_POST["mail"], $_POST["pass"])) {
+            $errores [] = "<b>ERROR!</b> El Mail o Contraseña son incorrectos.";
         }
 
-        if (trim($_POST["password"]) == "") {
-            $errores[] = "No pusiste contrase&ntilde;a";
+        if (trim($_POST["pass"]) == "") {
+            $errores[] = "<b>ERROR!</b> El campo Contrase&ntilde;a no puede estar vacio.";
+        } else if (strlen($_POST["pass"]) < 8) {
+            $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener minimo 8 caracteres.";
+        } else if (!preg_match($passreg, $_POST["pass"])) {
+            $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener al menos una letra minúscula, una mayúscula y un numero.";
         }
-
+        
         return $errores;
     }
 }

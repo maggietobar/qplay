@@ -22,12 +22,12 @@ var validarForm = {
                 return true;
             } else {
                 errinputs[0].setAttribute("class","form-group onerror");
-                form.mail.focus();
+               // form.mail.focus();
                 error[0].innerHTML = "<b>ERROR!</b> El Email ingresado no es valido.";
             }  // fin 5 if else
         } else {
             errinputs[0].setAttribute("class","form-group onerror");
-            form.mail.focus();
+           // form.mail.focus();
             error[0].innerHTML = "<b>ERROR!</b> El campo email no puede estar vacio.";
         } // fin 6 if else
     }, // fin validarMail()
@@ -42,22 +42,22 @@ var validarForm = {
                         return true;
                     } else {
                         errinputs[1].setAttribute("class","form-group onerror");
-                        form.pass.focus();
+                      //  form.pass.focus();
                         error[1].innerHTML = "<b>ERROR!</b> La contraseña no puede ser igual al mail.";
                     } // fin 1 if else
                 } else {
                     errinputs[1].setAttribute("class","form-group onerror");
-                    form.pass.focus();
+                 //   form.pass.focus();
                     error[1].innerHTML = "<b>ERROR!</b> La contraseña tiene que tener al menos una letra minúscula, una mayúscula y un numero.";
                 }  // fin 2 if else
             } else {
                 errinputs[1].setAttribute("class","form-group onerror");
-                form.pass.focus();
+             //   form.pass.focus();
                 error[1].innerHTML = "<b>ERROR!</b> La Contraseña tiene que tener minimo 8 caracteres.";
             }  // fin 3 if else
         } else {
             errinputs[1].setAttribute("class","form-group onerror");
-            form.pass.focus();
+        //    form.pass.focus();
             error[1].innerHTML = "<b>ERROR!</b> El campo contraseña no puede estar vacio.";
         }  // fin 4 if else
     } // fin validarPass()
