@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+
+if ($_POST){
+
+  $repositorio = new UserJSONRepository();
+
+
+}
+
+?>
 <html>
   <head>
     <meta name="name" content="content">
@@ -52,11 +61,11 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <h3 class="text-center font-comfortaa logtit">Recuperar Contraseña</h3>
-          <form class="form">
+          <form class="form" method="post" action="forgotpass.php">
 
             <div class="form-group">
               <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail3" name="mail" placeholder="Email">
             </div>
 
               <button type="submit" class="btn btn-login center-block">Enviar</button>
