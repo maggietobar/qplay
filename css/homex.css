@@ -1,7 +1,6 @@
 /*-al body recibe el padding porque la barra de navegacion es fixed -*/
 
 body {
-    /*padding-top: 70px;*/
     background-color: #333333;
 }
 

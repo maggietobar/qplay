@@ -72,8 +72,14 @@ class UserJSONRepository extends UserRepository {
 		return $ultimoUsuarioArray["id"] + 1;
 	}
 
-	public function usuarioValido($mail, $pass)
-	{
+
+     /* se comento esta funcion ya que se crearon 2 funciones por separado
+      * emailValido($mail) solo para validar el mail si es correcto
+      * passValido($pass, $mail) solo para validar si la contraseña del usuario (email) es correcta
+      * es para validar el Login por campo con los errores mas espesificos y aplicarle una correcta
+      * y mas entendible estetica para una mejor interaccion con el usuario.
+     
+	public function usuarioValido($mail, $pass) {
 		$usuario = $this->getUsuarioByMail($mail);
 
 		if ($usuario) {
@@ -81,7 +87,27 @@ class UserJSONRepository extends UserRepository {
 				return true;
 			}
 		}
+		return false;
+	}
+	
+	*/
+	
+	public function emailValido($mail) {
+		$usuario = $this->getUsuarioByMail($mail);
 
+		if ($usuario) {
+			return true;
+		}
+		return false;
+	}
+	
+    public function passValido($mail, $pass) {
+		$usuario = $this->getUsuarioByMail($mail);
+		if ($usuario) {
+			if (password_verify($pass, $usuario->getPassword())) {
+				return true;
+			}
+		}
 		return false;
 	}
 
