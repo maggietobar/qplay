@@ -27,7 +27,7 @@
  */
 
  require_once 'class.smtp.php';
- 
+
 class PHPMailer
 {
     /**

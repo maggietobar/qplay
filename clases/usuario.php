@@ -11,10 +11,10 @@ class Usuario {
 	private $bandas = [];
 	private $instrumentos = [];
 	private $nivel = [];
-    private $idPass;
+  private $idPass;
 //	private $sexo;
-	
-	
+
+
 
 	public function __construct(Array $miUsuario)
 	{
@@ -27,7 +27,7 @@ class Usuario {
 		$this->bandas = $miUsuario["bandas"];
 		$this->instrumentos = $miUsuario["inst"];
 		$this->nivel = $miUsuario["nivelinst"];
-        $this->idPass = $this->setIdPass();
+    $this->idPass = $this->setIdPass();
 	//	$this->sexo = $miUsuario["sexo"];
 	}
 
@@ -64,7 +64,7 @@ class Usuario {
 	public function getIdPass(){
 	    return $this->idPass;
     }
-	
+
 	public function setNombre($nombre)
 	{
 		$this->nombre = $nombre;

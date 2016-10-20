@@ -2,21 +2,51 @@
 
 if ($_POST){
 
-
+  $errores = [];
+  $passreg = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/";
 
   if (!$repositorio->getUserRepository()->existeElMail($_POST["mail"])){
-    $errorForgot = 'El mail no existe';
+    $errores[] = 'El mail no existe';
   } else{
     $miUsuario = $repositorio->getUserRepository()->getUsuarioByMail($_POST["mail"]);
 
-    recuperar_contraseña($miUsuario->email, $miUsuario->idPass);
+    if ($miUsuario->idPass != $_GET['id']){
+      $errores[] = "El mail ingresado no es válido para el link";
+    }
+
+    if (trim($_POST["pass"]) == "") {
+        $errores[] = "<b>ERROR!</b> El campo Contrase&ntilde;a no puede estar vacio.";
+    } else if (strlen($_POST["pass"]) < 8) {
+        $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener minimo 8 caracteres.";
+    } else if (!preg_match($passreg, $_POST["pass"])) {
+        $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener al menos una letra minúscula, una mayúscula y un numero.";
+    }
+
+    if (trim($miUsuario["password2"]) == "")
+    {
+        $errores[] = "<b>ERROR!</b> Tiene que confirmar su contraseña.";
+    }
+    if ($miUsuario["password"] != $miUsuario["password2"])
+    {
+        $errores[] = "<b>ERROR!</b> La contraseña y su confimacion no pueden ser distintas.";
+    }
+
+    if (!$errores){
+      $miUsuario->setPassword($_POST['password']);
+      $miusuario->setIdPass();
+      $repositorio->getUserRepository()->guardarUsuario($miUsuario);
+    }
+
   }
 
 
 
 }
 
-?>
+
+
+ ?>
+
 <html>
   <head>
     <meta name="name" content="content">
@@ -28,7 +58,7 @@ if ($_POST){
     <link rel="stylesheet" href="css/homex.css" type="text/css" />
     <link rel="stylesheet" href="css/login.css" type="text/css" />
     <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
-    <title>QPlay Login</title>
+    <title>Reiniciar contraseña</title>
   </head>
   <body>
 
@@ -52,12 +82,6 @@ if ($_POST){
         <li><a class="btn btn-nav" href="login.php">Conectate <i class="fa fa-link"></i></a></li>
         <li><a class="btn btn-nav" href="register.php">Registrate <i class="fa fa-book"></i></a></li>
       </ul>
-      <!--form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="nav-search" placeholder="Buscar...">
-        </div>
-        <!--button type="submit" class="btn btn-default">Submit</button>
-      </form-->
     </div>
   </div>
 </nav>
@@ -70,11 +94,12 @@ if ($_POST){
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <h3 class="text-center font-comfortaa logtit">Recuperar Contraseña</h3>
-          <form class="form" method="post" action="forgotpass.php">
+          <form class="form" method="post" action="reiniciarPassword.php">
 
             <div class="form-group">
-              <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
-              <input type="email" class="form-control" id="inputEmail3" name="mail" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail4" name="mail" placeholder="Email">
+              <input type="password" class="form-control" id="inputEmail4" name="password" placeholder="Ingrese su nueva contraseña">
+              <input type="password" class="form-control" id="inputEmail4" name="password2" placeholder="Repita la nueva contraseña">
             </div>
 
               <button type="submit" class="btn btn-login center-block">Enviar</button>
