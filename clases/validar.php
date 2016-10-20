@@ -74,21 +74,23 @@ class Validar {
         $passreg = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/";
 
         if (trim($_POST["mail"]) == "") {
-            $errores[] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
+            $errores["mail"] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
         } else if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {    
-            $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
+            $errores["mail"] = "<b>ERROR!</b> El Email ingresado no es valido.";
         } else if (!$this->userRepository->existeElMail($_POST["mail"])) {
-            $errores[] = "<b>ERROR!</b> El Email ingresado no pertenece a una cuenta registrada.";
-        } else if (!$this->userRepository->usuarioValido($_POST["mail"], $_POST["pass"])) {
-            $errores [] = "<b>ERROR!</b> El Mail o Contraseña son incorrectos.";
+            $errores["mail"] = "<b>ERROR!</b> El Email ingresado no pertenece a una cuenta registrada.";
+        } else if (!$this->userRepository->emailValido($_POST["mail"])) {
+            $errores ["mail"] = "<b>ERROR!</b> El Email es incorrecto.";
         }
 
         if (trim($_POST["pass"]) == "") {
-            $errores[] = "<b>ERROR!</b> El campo Contrase&ntilde;a no puede estar vacio.";
+            $errores["pass"] = "<b>ERROR!</b> El campo Contrase&ntilde;a no puede estar vacio.";
         } else if (strlen($_POST["pass"]) < 8) {
-            $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener minimo 8 caracteres.";
+            $errores["pass"] = "<b>ERROR!</b> La Contraseña tiene que tener minimo 8 caracteres.";
         } else if (!preg_match($passreg, $_POST["pass"])) {
-            $errores[] = "<b>ERROR!</b> La Contraseña tiene que tener al menos una letra minúscula, una mayúscula y un numero.";
+            $errores["pass"] = "<b>ERROR!</b> La Contraseña tiene que tener al menos una letra minúscula, una mayúscula y un numero.";
+        } else if (!$this->userRepository->passValido($_POST["mail"], $_POST["pass"])) {
+            $errores ["pass"] = "<b>ERROR!</b> La Contraseña es incorrecta.";
         }
         
         return $errores;

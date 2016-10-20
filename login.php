@@ -75,7 +75,7 @@
 <!-- FIN DEL NAVBAR -->
 <!-- COMIENZO DE JUMBOTRON -->
 
-<div class="jumbotronlog">
+<!-- div class="jumbotronlog" -->
   <div class="container-fluid login">
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -92,12 +92,12 @@
           <form class="form" id="form" action="login.php" method="post">
 
             <div class="error"><p class="errcript"></p></div>
-            <div class="form-group">
+            <div class="form-group <?php echo (isset($errores["mail"]))? "onerrorph" : "" ?> ">
               <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
               <input type="text" class="form-control" id="mail" name="mail" placeholder="Email" maxlength="55" value="<?php echo isset($_POST['mail']) ? $_POST['mail'] : "" ?>">
             </div>
             <div class="error"><p class="errcript"></p></div>
-            <div class="form-group">
+            <div class="form-group <?php echo (isset($errores["pass"]))? "onerrorph" : "" ?>  ">
               <!-- <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label> -->
               <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" maxlength="40">
             </div>
@@ -112,8 +112,8 @@
         </div>
     </div>
   </div>
-</div>
-
+<!-- /div -->
+<!-- COMIENZO DEL jumbotron -->
 
 <!-- COMIENZO DEL FOOTER -->
 <div class="container-fluid footer">
@@ -165,7 +165,7 @@
 <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/botcolaps.js"></script>
-<!-- script type="text/javascript" src="js/logval.js"></script -->
+<script type="text/javascript" src="js/logval.js"></script>
 
 </body>
 </html>
