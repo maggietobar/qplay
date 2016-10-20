@@ -11,7 +11,7 @@ class Usuario {
 	private $bandas = [];
 	private $instrumentos = [];
 	private $nivel = [];
-  private $idPass;
+    private $idPass;
 //	private $sexo;
 
 
@@ -27,7 +27,7 @@ class Usuario {
 		$this->bandas = $miUsuario["bandas"];
 		$this->instrumentos = $miUsuario["inst"];
 		$this->nivel = $miUsuario["nivelinst"];
-    $this->idPass = $this->setIdPass();
+        $this->idPass = $this->setIdPass();
 	//	$this->sexo = $miUsuario["sexo"];
 	}
 
