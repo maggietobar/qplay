@@ -1,19 +1,16 @@
 <?php
 
+require_once "soporte.php";
+
 if ($_POST){
-
-
 
   if (!$repositorio->getUserRepository()->existeElMail($_POST["mail"])){
     $errorForgot = 'El mail no existe';
   } else{
     $miUsuario = $repositorio->getUserRepository()->getUsuarioByMail($_POST["mail"]);
 
-    recuperar_contraseña($miUsuario->email, $miUsuario->idPass);
+    recuperar_contraseña($miUsuario->getMail(), $miUsuario->getIdPass());
   }
-
-
-
 }
 
 ?>

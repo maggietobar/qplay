@@ -16,7 +16,7 @@
 	{
 		$pNombre = $_POST["nombre"];
 		$pApellido = $_POST["apellido"];
-		$pMail = $_POST["mail"];
+		$pMail = $_POST["email"];
 		//Acá vengo si me enviaron el form
 
 		//Validar
@@ -25,12 +25,13 @@
 		// Si no hay errores....
 		if (empty($errores))
 		{
-			$miUsuarioArr = $_POST;
+
+
 			$usuario = new Usuario($_POST);
 			$usuario->setPassword($_POST["password"]);
 			// Guardar al usuario en un JSON
 			$repositorio->getUserRepository()->guardarUsuario($usuario);
-			$usuario->guardarImagen($usuario);
+//			$usuario->guardarImagen($usuario);
 			// Reenviarlo a la felicidad
 			header("location:index.php");exit;
 		}
@@ -328,7 +329,7 @@
     <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/botcolaps.js"></script>
-    <!-- script type="text/javascript" src="js/validacion_register.js"></script -->
+    <script type="text/javascript" src="js/validacion_register.js"></script>
 
 </body>
 

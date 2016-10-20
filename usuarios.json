@@ -1,6 +1,2 @@
-{"nombre":"Eugenio","apellido":"Vorontsov","password":"$2y$10$iFLOhRuQ0qfs8VXrGl\/fN.uj2uHFa5Bb5VAtNNfV3UdOINde9ZptG","mail":null,"sexo":null,"id":1}
-{"nombre":"Eugenio","apellido":"Vorontsov","password":"$2y$10$sJAde7MXK9t\/\/Zc2mQaCfucV7RPoouo7lCDtO4tL7VT6cUwR5oGsy","mail":"magik@gmail.com","sexo":null,"id":2}
-{"id":3,"nombre":"Eugenio","apellido":"Vorontsov","email":"magik@gmail.com","password":"$2y$10$l9UFbQ5fo0t\/qO7fI8cz4e\/YVhMmxJbBiQ3zj62YpxrcLVPVlTCJ2","fecha":"3\/3\/2000","banda1":"Metalica","banda2":""}
-{"id":4,"nombre":"Eugenio","apellido":"Vorontsov","email":"maceuge@icloud.com","password":"$2y$10$FJgDhvMt.JLlft3fNZkZ9.Vs5liwWTp\/QuvIGWfJGgktO\/9nzCG9C","fecha":"1-1-1993","banda1":"asdfsdsadf","banda2":"asdfsdfa"}
-{"id":5,"nombre":"Jason","apellido":"Borne","email":"smart@killer.com","password":"$2y$10$xRUoKoDtM.qDy4FSbQexG..S45ntLPWU3f.V7B0sqAvTPzHf8hZ3G","fecha":"16-3-1993","bandas":["Havy","Metal","Rock"]}
-{"id":6,"nombre":"Carlitox","apellido":"Robertus","email":"rober@gmail.com","password":"$2y$10$0ThhJr87nkoLwdE07oJIj.kccqZpaHKS.BWFLhm15B1JU8T\/1bzhS","fecha":"5-3-1993","bandas":["Muy","Buena","banda","Felociraptur"],"instrumentos":["Cocojongo","Flautita","El Arpa"],"nivel":["1","3","2"]}
+{"id":1,"nombre":"Sebas","apellido":"Crosta","email":"sebas.crosta@gmail.com","password":"$2y$10$nA1zsD\/\/K003bDoXYAERquBdiv3VTBntyory9GCp9Nh7DJvyxGIym","fecha":"20-12-1993","bandas":["Clever Girl"],"inst":["Guitarra"],"nivelinst":["2"],"idPass":"zue96VGtKVeEQXY"}
+

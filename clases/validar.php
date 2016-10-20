@@ -26,7 +26,11 @@ class Validar {
 	}
 
     public function validarUsuario($miUsuario)  {
-        
+
+        echo "<br><br> La variable miusuario tiene: ";
+        var_dump($miUsuario);
+
+
         $errores = [];
 
         if (trim($miUsuario["nombre"]) == "")

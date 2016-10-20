@@ -2,9 +2,8 @@
 
 require_once 'class.phpmailer.php';
 
-//function recuperar_contraseña($mail, $idPass){
+function recuperar_contraseña($dir_mail, $idPass){
 
-    $idPass = 'jdkfsjDFJSDFASKM9';
     $mail = new PHPMailer();
 
     $mail->IsSMTP();
@@ -19,12 +18,12 @@ require_once 'class.phpmailer.php';
     $mail->From = "qplay.contacto@gmail.com";
     $mail->FromName = "Qplay";
 
-    $mail->AddAddress('sebas.crosta@gmail.com'); // Esta es la dirección a donde enviamos
+    $mail->AddAddress($dir_mail); // Esta es la dirección a donde enviamos
     $mail->IsHTML(true); // El correo se envía como HTML
     $mail->Subject = "Restablecimiento de contraseña"; // Este es el titulo del email.
-    $body = 'Hola!<br /><br /> Para restablecer tu contraseña entrá al siguiente  <a href="localhost/qplay/reiniciarPassword.php?id='.$idPass.'">link</a> <br />  .<br /><br /> Saludos! <br /> <b>Qplay</b>';
+    $body = 'Hola!<br /><br /> Para restablecer tu contraseña entrá al siguiente  <a href="localhost/qplay/reiniciarPassword.php?id='.$idPass.'">link</a>. <br /> <br /><br /> Saludos! <br /> <b>Qplay</b>';
     $mail->Body = $body; // Mensaje a enviar
     $exito = $mail->Send(); // Envía el correo.
-//}
+}
 
  ?>

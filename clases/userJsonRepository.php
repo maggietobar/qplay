@@ -27,6 +27,11 @@ class UserJSONRepository extends UserRepository {
 			$miUsuario->setId($this->traerNuevoId());
 		}
 
+		if ($miUsuario->getIdPass()== null)
+		{
+            $miUsuario->setIdPass();
+        }
+
 		$miUsuarioArray = $this->usuarioToArray($miUsuario);
 		$usuarioJSON = json_encode($miUsuarioArray);
 		file_put_contents("usuarios.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
@@ -43,9 +48,10 @@ class UserJSONRepository extends UserRepository {
 		$usuarioArray["password"] = $miUsuario->getPassword();
 		$usuarioArray["fecha"] = $miUsuario->getFecha();
 		$usuarioArray["bandas"] = $miUsuario->getBandas();
-	    $usuarioArray["instrumentos"] = $miUsuario->getInstrumento();
-	    $usuarioArray["nivel"] = $miUsuario->getNivel();
-		//$usuarioArray["sexo"] = $miUsuario->getSexo();
+	    $usuarioArray["inst"] = $miUsuario->getInst();
+	    $usuarioArray["nivelinst"] = $miUsuario->getNivelinst();
+	    $usuarioArray["idPass"] = $miUsuario->getIdPass();
+
 		
 
 
@@ -53,7 +59,15 @@ class UserJSONRepository extends UserRepository {
 	}
 
 	private function arrayToUsuario(Array $miUsuario) {
-		return new Usuario($miUsuario);
+
+	    $usuarioAux = $miUsuario;
+
+	    $fecha = explode('-', $usuarioAux["fecha"]);
+        $usuarioAux["dianac"] = $fecha[0];
+        $usuarioAux["mesnac"] = $fecha[1];
+        $usuarioAux["anionac"] = $fecha[2];
+
+        return new Usuario($usuarioAux);
 	}
 
 	private function traerNuevoId()

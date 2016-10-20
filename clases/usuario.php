@@ -9,25 +9,25 @@ class Usuario {
 	private $password;
 	private $fecha;
 	private $bandas = [];
-	private $instrumentos = [];
-	private $nivel = [];
-  private $idPass;
-//	private $sexo;
+	private $inst = [];
+	private $nivelinst = [];
+    private $idPass;
+
 
 
 
 	public function __construct(Array $miUsuario)
 	{
-		$this->id = $miUsuario["id"];
+		$this->id = $miUsuario["id"];  //(?????!?!?!?!?!?!)
 		$this->nombre = $miUsuario["nombre"];
 		$this->apellido = $miUsuario["apellido"];
 		$this->email = $miUsuario["email"];
 		$this->password = $miUsuario["password"];
 		$this->fecha = $miUsuario["dianac"]."-".$miUsuario["mesnac"]."-".$miUsuario["anionac"];
 		$this->bandas = $miUsuario["bandas"];
-		$this->instrumentos = $miUsuario["inst"];
-		$this->nivel = $miUsuario["nivelinst"];
-    $this->idPass = $this->setIdPass();
+		$this->inst = $miUsuario["inst"];
+		$this->nivelinst = $miUsuario["nivelinst"];
+        $this->idPass = $miUsuario["idPass"];
 	//	$this->sexo = $miUsuario["sexo"];
 	}
 
@@ -55,11 +55,11 @@ class Usuario {
 	public function getBandas() {
 		return $this->bandas;
 	}
-	public function getInstrumento() {
-		return $this->instrumentos;
+	public function getInst() {
+		return $this->inst;
 	}
-	public function getNivel() {
-		return $this->nivel;
+	public function getNivelinst() {
+		return $this->nivelinst;
 	}
 	public function getIdPass(){
 	    return $this->idPass;
@@ -81,10 +81,7 @@ class Usuario {
 	{
 		$this->password = password_hash($password, PASSWORD_DEFAULT);
 	}
-	/*public function setSexo($sexo)
-	{
-		$this->sexo = $sexo;
-	}*/
+
 	public function setId($id)
 	{
 		$this->id = $id;
@@ -99,7 +96,7 @@ class Usuario {
         }
     }
 
-	public function guardarImagen()
+	/*public function guardarImagen()
 	{
 		if ($_FILES["imagen"]["error"] == UPLOAD_ERR_OK)
 		{
@@ -113,5 +110,5 @@ class Usuario {
 
 			move_uploaded_file($_FILES["imagen"]["tmp_name"], $miArchivo);
 		}
-	}
+	}*/
 }
