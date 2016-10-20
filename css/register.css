@@ -2,7 +2,7 @@ body{
    background-color: #333333;
 }
 
-.jumbotronreg {
+/*.jumbotronreg {
     height: 870px;
     margin-bottom: 0;
     border-radius: 0;
@@ -10,10 +10,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     color:#fff;
-}
+}*/
 
-.container{
-  padding-top: 70px;
+.regist{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url(../img/mic3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #FFF;
 }
 

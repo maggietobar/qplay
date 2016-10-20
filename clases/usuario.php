@@ -9,10 +9,17 @@ class Usuario {
 	private $password;
 	private $fecha;
 	private $bandas = [];
+<<<<<<< HEAD
 	private $inst = [];
 	private $nivelinst = [];
     private $idPass;
 
+=======
+	private $instrumentos = [];
+	private $nivel = [];
+    private $idPass;
+//	private $sexo;
+>>>>>>> origin/master
 
 
 
@@ -25,9 +32,15 @@ class Usuario {
 		$this->password = $miUsuario["password"];
 		$this->fecha = $miUsuario["dianac"]."-".$miUsuario["mesnac"]."-".$miUsuario["anionac"];
 		$this->bandas = $miUsuario["bandas"];
+<<<<<<< HEAD
 		$this->inst = $miUsuario["inst"];
 		$this->nivelinst = $miUsuario["nivelinst"];
         $this->idPass = $miUsuario["idPass"];
+=======
+		$this->instrumentos = $miUsuario["inst"];
+		$this->nivel = $miUsuario["nivelinst"];
+        $this->idPass = $this->setIdPass();
+>>>>>>> origin/master
 	//	$this->sexo = $miUsuario["sexo"];
 	}
 
