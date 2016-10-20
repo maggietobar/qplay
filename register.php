@@ -25,8 +25,6 @@
 		// Si no hay errores....
 		if (empty($errores))
 		{
-
-
 			$usuario = new Usuario($_POST);
 			$usuario->setPassword($_POST["password"]);
 			// Guardar al usuario en un JSON
