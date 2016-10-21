@@ -27,10 +27,6 @@ class Validar {
 
     public function validarUsuario($miUsuario)  {
 
-        echo "<br><br> La variable miusuario tiene: ";
-        var_dump($miUsuario);
-
-
         $errores = [];
 
         if (trim($miUsuario["nombre"]) == "")
@@ -44,6 +40,17 @@ class Validar {
         if ($miUsuario["email"] == "")
         {
             $errores[] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
+        } else{
+            if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
+            {
+                $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
+                unset($_POST['email']);
+            }
+            if ($this->userRepository->existeElMail($miUsuario["email"]))
+            {
+                $errores[] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
+                unset($_POST['email']);
+            }
         }
 
         if (trim($miUsuario["password"]) == "")
@@ -59,16 +66,6 @@ class Validar {
             $errores[] = "<b>ERROR!</b> La contraseña y su confimacion no pueden ser distintas.";
         }
 
-        if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
-        {
-            $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
-            unset($_POST['email']);
-        }
-        if ($this->userRepository->existeElMail($miUsuario["email"]))
-        {
-            $errores[] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
-            unset($_POST['email']);
-        }
         return $errores;
     }
 
