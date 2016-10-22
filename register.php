@@ -6,6 +6,8 @@
 		header("location:index.php");exit;
 	}
 
+    $meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",];
+
 	$pNombre = "";
 	$pApellido = "";
 	$pMail = "";
@@ -94,44 +96,42 @@
         <!-- Aqui empiza el formulario -->
         <form id="formreg" class="form" action="register.php" method="post">
             <div class="row">
-                <div class="col-xs-12 col-md-6 sin-padd-izquierd">
+                <div class="col-xs-12 col-md-6">
                     <div class="erro"><p class="error" id="error-nombre"></p></div>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30" value="<?php echo (isset($_POST['nombre']))? $_POST['nombre'] : "" ?>">
+                    <div class="form-group sp <?php echo (isset($errores["nombre"]))? "onerrorph" : "" ?>">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre" maxlength="30" value="<?php echo (isset($_POST['nombre']))? $_POST['nombre'] : "" ?>">
+                    </div>    
                 </div>
                 
-                <div class="col-xs-12 col-md-6 sin-padd-derech">
+                <div class="col-xs-12 col-md-6">
                     <div class="erro"><p class="error" id="error-apellido"></p></div>
-                    <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30" value="<?php echo (isset($_POST['apellido']))? $_POST['apellido'] : "" ?>">
+                    <div class="form-group sp <?php echo (isset($errores["apellido"]))? "onerrorph" : "" ?>">
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido" maxlength="30" value="<?php echo (isset($_POST['apellido']))? $_POST['apellido'] : "" ?>">
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="erro"><p class="error" id="error-mail"></p></div>
-                    <input type="text" name="email" class="form-control" placeholder="Email" maxlength="55" value="<?php echo (isset($_POST['email']))? $_POST['email'] : "" ?>">
-                </div>
+            <div class="erro"><p class="error" id="error-mail"></p></div>
+            <div class="form-group <?php echo (isset($errores["email"]))? "onerrorph" : "" ?>">
+                <input class="form-control" type="text" name="email" placeholder="Email" maxlength="55" value="<?php echo (isset($_POST['email']))? $_POST['email'] : "" ?>">
             </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="erro"><p class="error" id="error-pass"></p></div>
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña" maxlength="30">
-                </div>
+            
+            <div class="erro"><p class="error" id="error-pass"></p></div>
+            <div class="form-group <?php echo (isset($errores["password"]))? "onerrorph" : "" ?>">
+                <input type="password" name="password" class="form-control" placeholder="Contrase&ntilde;a" maxlength="30">
             </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="erro"><p class="error" id="error-pass2"></p></div>
-                    <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña" maxlength="30">
-                </div>
+            
+            <div class="erro"><p class="error" id="error-pass2"></p></div>
+            <div class="form-group <?php echo (isset($errores["password2"]))? "onerrorph" : "" ?>">
+                <input type="password" name="password2" class="form-control" placeholder="Repita su contrase&ntilde;a" maxlength="30">
             </div>
-
+            
             <div class="row">
                 <div class="erro"><p class="error" id="error-fecha"></p></div>
                     <div class="form-group">
                         <p class="titulos-form">Fecha de Nacimiento</p>
                             <div class="col-md-4 col-xs-12">
-                                <label for="dianac">Día</label>
+                                <label for="dianac">Dia</label>
                                 <select class="form-control select" name="dianac" id="dianac" value="<?php echo (isset($_POST['dianac']))? $_POST['dianac'] : "" ?>">
                                         <option>1</option>
                                         <option>2</option>
@@ -170,31 +170,26 @@
                             <div class="col-md-4 col-xs-12">
                                 <label for="mesnac">Mes</label>
                                 <select class="form-control select" name="mesnac" id="mesnac" value="<?php echo (isset($_POST['dianac']))? $_POST['dianac'] : "" ?>">
-                                    <option value="1">Enero</option>
-                                    <option value="2">Febrero</option>
-                                    <option value="3">Marzo</option>
-                                    <option value="4">Abril</option>
-                                    <option value="5">Mayo</option>
-                                    <option value="6">Junio</option>
-                                    <option value="7">Julio</option>
-                                    <option value="8">Agosto</option>
-                                    <option value="9">Septiembre</option>
-                                    <option value="10">Octubre</option>
-                                    <option value="11">Noviembre</option>
-                                    <option value="12">Diciembre</option>
+    				                <?php
+    				                    $num = 1;
+                                        foreach ($meses as $mes) {
+    					                    echo "<option value=".$num.">".$mes."</option>";
+    					                    $num++;
+    				                    } 
+    				                 ?> 
                                 </select>
                             </div>
 
                             <div class="col-md-4 col-xs-12">
-                                <label for="anionac">Año</label>
-                                <input class="form-control" type="number" name="anionac" id="anionac" placeholder="Año" value="<?php echo (isset($_POST['anionac']))? $_POST['anionac'] : "" ?>"  min="1930" max="2016">
+                                <label for="anionac">A&ntilde;o</label>
+                                <input class="form-control" type="number" name="anionac" id="anionac" placeholder="A&ntilde;o" value="<?php echo (isset($_POST['anionac']))? $_POST['anionac'] : "" ?>"  min="1930" max="2016" maxlength="4">
                             </div>
                     </div>
             </div>
 
             <div class="row">
                 <div class="form-group">
-                    <p class="titulos-form">¿Qué bandas te gustan?</p>
+                    <p class="titulos-form">Que bandas te gustan?</p>
                         <div class="row row-padding">
                             <div id="bandas">
                                 <div class="col-xs-12 col-md-4">
@@ -210,7 +205,7 @@
 
             <div class="row">
                 <div class="form-group">
-                    <p class="titulos-form">Tocás algún instrumento?</p>
+                    <p class="titulos-form">Tocas algun instrumento?</p>
                         <div class="row row-padding">
                             <div id="instrument">
                                 <div class="col-md-6 col-xs-12">
@@ -299,10 +294,11 @@
 </div>
 <!-- FIN DEL FOOTER -->
 
-    <!-- COMIENZO DE JAVASCRIPT PLUGINS -->
-    <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/botcolaps.js"></script>
+<!-- COMIENZO DE JAVASCRIPT PLUGINS -->
+<script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/botcolaps.js"></script>
+<script type="text/javascript" src="js/validacion_register.js"></script>
 
 </body>
 </html>

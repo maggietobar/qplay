@@ -2,17 +2,7 @@ body{
    background-color: #333333;
 }
 
-/*.jumbotronreg {
-    height: 870px;
-    margin-bottom: 0;
-    border-radius: 0;
-    background-image: url(../img/mic3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color:#fff;
-}*/
-
-.regist{
+.regist {
   padding-top: 40px;
   padding-bottom: 40px;
   background-image: url(../img/mic3.jpg);
@@ -21,12 +11,18 @@ body{
   color: #FFF;
 }
 
-.titulos-form{
-  font-size: 15px;
+.titulos-form {
   margin-bottom: 5px;
-  font-weight: bold;
   padding-left: 15px;
-  padding-top: 10px;
+  padding-top: 1px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  
+}
+
+label {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px; 
 }
 
 .regtit {
@@ -35,6 +31,11 @@ body{
 
 .row-padding{
   padding: 0 15px;
+}
+
+.sp {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .form-control {
@@ -128,6 +129,19 @@ body{
     padding-top: 10px;
     background-color: #330000;
     color: #e62e00;
+    box-shadow: 0 0 12px #000;
+}
+
+.onerrorph > input {
+    font-size: 15px;
+    border-color: #e62e00;
+    color: #e62e00;
+    box-shadow: 0 0 12px #000;
+}
+
+.onerrorph > input:focus {
+    border: 1px solid #e62e00;
+    box-shadow: 0 0 12px #e62e00;
 }
 
 .errcript {
@@ -141,13 +155,6 @@ body{
   font-weight: normal;
 }
 
-.sin-padd-derecha{
-  padding-right: 0;
-}
-
-.sin-padd-izquierda{
-  padding-left: 0;
-}
 
 @media only screen and (max-width:991px) {
     .jumbotronreg {

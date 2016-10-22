@@ -1,14 +1,4 @@
 
-/*.jumbotronlo {
-    height: 420px;
-    margin-bottom: 0;
-    border-radius: 0;
-    background-image: url(../img/tocguitLog.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color:#fff;
-}*/
-
 .login {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -59,6 +49,17 @@
 .form-group > input:focus {
     border: 1px solid #94d500;
     box-shadow: 0 0 9px #94d500;
+}
+
+.input-group-addon {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #001a00;
+    text-align: center;
+    background-color: #94d500;
+    border: 1px solid #94d500;
+    border-radius: 0px;
 }
 
 /* efecto cuando se produce un error en el campo */

@@ -31,39 +31,39 @@ class Validar {
 
         if (trim($miUsuario["nombre"]) == "")
         {
-            $errores[] = "<b>ERROR!</b> El campo Nombre no puede estar vacio.";
+            $errores["nombre"] = "<b>ERROR!</b> El campo Nombre no puede estar vacio.";
         }
         if (trim($miUsuario["apellido"]) == "")
         {
-            $errores[] = "<b>ERROR!</b> El campo Apellido no puede estar vacio.";
+            $errores["apellido"] = "<b>ERROR!</b> El campo Apellido no puede estar vacio.";
         }
         if ($miUsuario["email"] == "")
         {
-            $errores[] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
+            $errores["email"] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
         } else{
             if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
             {
-                $errores[] = "<b>ERROR!</b> El Email ingresado no es valido.";
+                $errores["email"] = "<b>ERROR!</b> El Email ingresado no es valido.";
                 unset($_POST['email']);
             }
             if ($this->userRepository->existeElMail($miUsuario["email"]))
             {
-                $errores[] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
+                $errores["email"] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
                 unset($_POST['email']);
             }
         }
 
         if (trim($miUsuario["password"]) == "")
         {
-            $errores[] = "<b>ERROR!</b> El campo Contraseña no puede estar vacio.";
+            $errores["password"] = "<b>ERROR!</b> El campo Contraseña no puede estar vacio.";
         }
         if (trim($miUsuario["password2"]) == "")
         {
-            $errores[] = "<b>ERROR!</b> Tiene que confirmar su contraseña.";
+            $errores["password2"] = "<b>ERROR!</b> Tiene que confirmar su contraseña.";
         }
         if ($miUsuario["password"] != $miUsuario["password2"])
         {
-            $errores[] = "<b>ERROR!</b> La contraseña y su confimacion no pueden ser distintas.";
+            $errores["password2"] = "<b>ERROR!</b> La contraseña y su confimacion no pueden ser distintas.";
         }
 
         return $errores;

@@ -2,13 +2,11 @@ window.onload = function () {
     
 // variables de botones para agregar   
     
-    var jumbotron = document.getElementById("jumbotron");    
     var contenido = document.getElementById("bandas");
     var botplus = document.getElementById("sumband");
     var botplus2 = document.getElementById("suminst");
     var contenido2 = document.getElementById("instrument");
     var divInsSel = document.getElementsByClassName("instselect");
-    var alto = jumbotron.scrollHeight;
     var cont = 1;
     var cont2 = 1;
     var pos = -1;
@@ -59,11 +57,6 @@ window.onload = function () {
             input.setAttribute("maxlength", "30");
     
         contenido.appendChild(divcont).appendChild(input);
-        
-        if (cont == 3) {
-            alto += 55;
-            jumbotron.style.height = alto+"px";
-        }
     
         if (cont > 5) {
             botplus.style.display = "none";
@@ -94,9 +87,6 @@ window.onload = function () {
             contenido2.appendChild(divInput).appendChild(input);
             contenido2.appendChild(divSelect).appendChild(select);
             select.innerHTML = option();
-            
-            alto += 60;
-            jumbotron.style.height = alto+"px";
 
         if (cont2 > 3) {
             botplus2.style.display = "none";
@@ -110,7 +100,6 @@ window.onload = function () {
         } else {
             divInsSel[cont2 - 2].setAttribute("class","col-md-6 col-xs-12 instselect");
         }
-
     } // fin agregar instrumento
 
 
