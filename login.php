@@ -21,6 +21,10 @@
 			$repositorio->getUserRepository()->guardarUsuario($usuario);
 			$usuario->guardarImagen($usuario);*/
 			// Reenviarlo a la felicidad
+			if (isset($_POST["recordame"])) {
+			//recordarlo
+				setcookie("usuarioLogueado", $usuario->getId(), time() + 60 * 60 * 24 * 365);
+			}
 			header("location:index.php");exit;
 		}
 	}
@@ -77,15 +81,15 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
       <h3 class="text-center font-comfortaa logtit">Iniciar Sesión</h3>
-          
+
          <?php if (!empty($errores)) { ?>
 		       <div class="errorph">
       			  <?php foreach ($errores as $error) { ?>
       					<p class="errcript"><?php echo $error ?></p>
       				<?php } ?>
       	   </div>
-	    	 <?php } ?> 
-		    	   
+	    	 <?php } ?>
+
         <form class="form" id="form" action="login.php" method="post">
 
           <div class="error"><p class="errcript"></p></div>
@@ -99,7 +103,7 @@
             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" maxlength="40">
           </div>
           <div class="checkbox">
-            <label><input type="checkbox"> Recordarme</label>
+            <label><input type="checkbox" name="recordarme" value="1"> Recordarme</label>
             <a href="forgotpass.php" class="olvidcont">Olvidaste tu contraseña?</a>
           </div>
 

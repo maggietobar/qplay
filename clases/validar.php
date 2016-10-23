@@ -70,13 +70,13 @@ class Validar {
     }
 
     function validarLogin() {
-        
+
         $errores = [];
         $passreg = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/";
 
         if (trim($_POST["mail"]) == "") {
             $errores["mail"] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
-        } else if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {    
+        } else if (!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
             $errores["mail"] = "<b>ERROR!</b> El Email ingresado no es valido.";
         } else if (!$this->userRepository->existeElMail($_POST["mail"])) {
             $errores["mail"] = "<b>ERROR!</b> El Email ingresado no pertenece a una cuenta registrada.";
@@ -93,7 +93,11 @@ class Validar {
         } else if (!$this->userRepository->passValido($_POST["mail"], $_POST["pass"])) {
             $errores ["pass"] = "<b>ERROR!</b> La Contraseña es incorrecta.";
         }
-        
+
+        if ($_POST["recordar_usuario"]=="1") {
+          setcookie('cookie_mail', $_GET['mail'], time() + (60*60*24*365));
+        }
+
         return $errores;
     }
 }
