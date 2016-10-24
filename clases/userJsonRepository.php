@@ -79,9 +79,6 @@ class UserJSONRepository extends UserRepository {
 	  $usuarioArray["nivelinst"] = $miUsuario->getNivelinst();
 	  $usuarioArray["idPass"] = $miUsuario->getIdPass();
 
-
-
-
 		return $usuarioArray;
 	}
 
@@ -96,8 +93,28 @@ class UserJSONRepository extends UserRepository {
 
         return new Usuario($usuarioAux);
 	}
+	private function traerNuevoId(){
 
-	private function traerNuevoId()
+		if (!file_exists("usuarios.json"))
+		{
+			return 1;
+		}
+
+		$usuariosArray = $this->getAllUsers(); //Tengo todos los users
+
+		$idMasGrande = 1;
+		//Si encuentro a mi ID
+		foreach ($usuariosArray as $key => $usuario){
+			if ($usuario->getId() > $idMasGrande){
+				$idMasGrande = $usuario->getId();
+			}
+		}
+		return $idMasGrande + 1;
+	}
+
+
+
+/*	private function traerNuevoId()
 	{
 		if (!file_exists("usuarios.json"))
 		{
@@ -111,7 +128,7 @@ class UserJSONRepository extends UserRepository {
 		$ultimoUsuarioArray = json_decode($ultimoUsuario, true);
 
 		return $ultimoUsuarioArray["id"] + 1;
-	}
+	} */
 
 
      /* se comento esta funcion ya que se crearon 2 funciones por separado
