@@ -15,7 +15,7 @@ class Usuario {
 
 	public function __construct(Array $miUsuario)
 	{
-		$this->id = $miUsuario["id"];  //(?????!?!?!?!?!?!)
+		$this->id = $miUsuario["id"];  
 		$this->nombre = $miUsuario["nombre"];
 		$this->apellido = $miUsuario["apellido"];
 		$this->email = $miUsuario["email"];
@@ -25,7 +25,7 @@ class Usuario {
 		$this->inst = $miUsuario["inst"];
 		$this->nivelinst = $miUsuario["nivelinst"];
         $this->idPass = $miUsuario["idPass"];
-;
+
 	}
 
 	public function getNombre() {

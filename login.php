@@ -1,29 +1,24 @@
 <?php
-	require_once("soporte.php");
+require_once("soporte.php");
+session_start();
 
-	if ($auth->estaLogueado())
-	{
-		header("location:index.php");exit;
+	if ($auth->estaLogueado()) {
+		header("location:usuariolog.php");
+		exit;
 	}
 
-	if ($_POST)
-	{
-		//Validar
+	if ($_POST) {
 		$errores = $validar->validarLogin($_POST);
 
-		// Si no hay errores....
-		if (empty($errores))
-		{
-		/*	$miUsuarioArr = $_POST;
-			$usuario = new Usuario($_POST);
-			$usuario->setPassword($_POST["password"]);
-			// Guardar al usuario en un JSON
-			$repositorio->getUserRepository()->guardarUsuario($usuario);
-			$usuario->guardarImagen($usuario);*/
+		if (empty($errores)) {
+      $usuario = $repositorio->getUserRepository()->getUsuarioByMail($_POST["mail"]);
+      $auth->loguear($usuario);
 			// Reenviarlo a la felicidad
-			header("location:index.php");exit;
+			header("location:usuariolog.php");
+			exit;
 		}
 	}
+	
 ?>
 
 <!DOCTYPE html>
