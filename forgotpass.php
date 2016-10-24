@@ -10,6 +10,7 @@ if ($_POST){
     $miUsuario = $repositorio->getUserRepository()->getUsuarioByMail($_POST["mail"]);
 
     recuperar_contraseña($miUsuario->getMail(), $miUsuario->getIdPass());
+    header("location:index.php");exit;
   }
 }
 

@@ -22,15 +22,42 @@ class UserJSONRepository extends UserRepository {
 
 	public function guardarUsuario(Usuario $miUsuario)
 	{
+		// si el usuario existe, hay que editar.
+		if($miUsuario->getId() != null){
+
+				$usuariosArray = $this->getAllUsers(); //Tengo todos los users
+
+				$miId = $miUsuario->getId();
+				//Si encuentro a mi ID
+				foreach ($usuariosArray as $key => $usuario){
+					if ($miId == $usuario->getId()){
+						unset($usuariosArray[$key]);
+					}
+				}
+
+				$usuariosArray[] = $miUsuario;
+
+				file_put_contents("usuarios.json", "");
+
+				foreach ($usuariosArray as $key => $usuario) {
+					$miUsuarioArray = $this->usuarioToArray($usuario);
+					$usuarioJSON = json_encode($miUsuarioArray);
+					file_put_contents("usuarios.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
+				}
+				return;
+		}
+
 		if ($miUsuario->getId() == null)
 		{
 			$miUsuario->setId($this->traerNuevoId());
 		}
 
+
+
 		if ($miUsuario->getIdPass()== null)
 		{
             $miUsuario->setIdPass();
-        }
+    }
 
 		$miUsuarioArray = $this->usuarioToArray($miUsuario);
 		$usuarioJSON = json_encode($miUsuarioArray);
@@ -48,11 +75,11 @@ class UserJSONRepository extends UserRepository {
 		$usuarioArray["password"] = $miUsuario->getPassword();
 		$usuarioArray["fecha"] = $miUsuario->getFecha();
 		$usuarioArray["bandas"] = $miUsuario->getBandas();
-	    $usuarioArray["inst"] = $miUsuario->getInst();
-	    $usuarioArray["nivelinst"] = $miUsuario->getNivelinst();
-	    $usuarioArray["idPass"] = $miUsuario->getIdPass();
+	  $usuarioArray["inst"] = $miUsuario->getInst();
+	  $usuarioArray["nivelinst"] = $miUsuario->getNivelinst();
+	  $usuarioArray["idPass"] = $miUsuario->getIdPass();
 
-		
+
 
 
 		return $usuarioArray;
@@ -92,7 +119,7 @@ class UserJSONRepository extends UserRepository {
       * passValido($pass, $mail) solo para validar si la contraseña del usuario (email) es correcta
       * es para validar el Login por campo con los errores mas espesificos y aplicarle una correcta
       * y mas entendible estetica para una mejor interaccion con el usuario.
-     
+
 	public function usuarioValido($mail, $pass) {
 		$usuario = $this->getUsuarioByMail($mail);
 
@@ -103,9 +130,9 @@ class UserJSONRepository extends UserRepository {
 		}
 		return false;
 	}
-	
+
 	*/
-	
+
 	public function emailValido($mail) {
 		$usuario = $this->getUsuarioByMail($mail);
 
@@ -114,7 +141,7 @@ class UserJSONRepository extends UserRepository {
 		}
 		return false;
 	}
-	
+
     public function passValido($mail, $pass) {
 		$usuario = $this->getUsuarioByMail($mail);
 		if ($usuario) {
