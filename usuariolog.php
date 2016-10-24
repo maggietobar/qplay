@@ -19,7 +19,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Abel|Cabin|Comfortaa|Exo|Farsan|Kaushan+Script|Poiret+One|Righteous|Russo+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Antic|Maven+Pro|Poppins|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Antic|Maven+Pro|Poppins|Ubuntu|Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/homex.css" type="text/css" />
     <link rel="stylesheet" href="css/usuario.css" type="text/css" />
@@ -30,7 +30,7 @@ session_start();
 
 <!-- COMIENZO DEL NAVBAR Y SU CONTENIDO -->
 <!-- Para hacerlo fluido quitar "navbar-fixed-top" y sacar padding del body en la hoja del estilo -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top userin">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -38,16 +38,26 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand font-kaushan logo" href="index.php">QPlay</a>
+      <a class="navbar-brand font-poiret logo" href="index.php">QPlay</a>
       <p class="navbar-text font-farsan">Bienvenido!</p>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-nav" href="">Fulanito <i class="fa fa-user"></i></a></li>
-        <li><a class="btn btn-nav" href="">Amigos <i class="fa fa-users"></i></a></li>
-        <li><a class="btn btn-nav" href="">Ajustes <i class="fa fa-gear"></i></a></li>
-        <li><a class="btn btn-nav" href="logout.php">Salir <i class="fa fa-sign-out"></i></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre." ".$apellido; ?>
+              <img class="img-circle subuser" src="img/user.jpg" alt="user" width="40" height="40">
+           <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-users"></i> Amigos</a></li>
+            <li><a href="#"><i class="fa fa-unlock-alt"></i> Privacidad</a></li>
+            <li><a href="#"><i class="fa fa-gear"></i> Configuracion</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="logout.php"><i class="fa fa-sign-out"></i> Salir</a></li>
+          </ul>
+        </li>
+        <!-- li><a class="btn btn-nav" href="logout.php">Salir <i class="fa fa-sign-out"></i></a></li -->
       </ul>
       <!-- form class="navbar-form navbar-left">
         <div class="form-group">
@@ -64,7 +74,7 @@ session_start();
 <div class="container-fluid usercover">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-       <img src="img/user.jpg" class="img-circle user center-block" alt="Usuario" width="250" height="250">
+       <img src="img/user.jpg" class="img-circle user center-block" alt="Usuario" width="230" height="230">
     </div>
   </div>
   <div class="row">

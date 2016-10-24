@@ -3,6 +3,42 @@ body {
     padding-top: 65px;
 }
 
+/*--------------- navbar -------------------*/
+
+.navbar-inverse .navbar-nav > .open > a, 
+.navbar-inverse .navbar-nav > .open > a:hover, 
+.navbar-inverse .navbar-nav > .open > a:focus { 
+    background-color: #94d500;
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #94d500;
+    color: #fff;
+}
+
+.dropdown-menu {
+    border: 1px solid #94d500;
+    background-color: #222;
+    border-radius: 0;
+    box-shadow: 0 0 12px #000;
+}
+
+.dropdown-menu > li > a {
+    padding: 7px 40px;
+    color: #94d500;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #94d500;
+    color: #fff;
+}
+
+.dropdown-menu .divider {
+    background-color: #444;
+}
+
+
 .usercover {
     padding-top: 60px;
     padding-bottom: 10px;
@@ -15,10 +51,10 @@ body {
 
 .username {
     padding-top: 20px;
-    font-size: 50px;
+    font-size: 39px;
     font-family: 'Comfortaa', cursive;
     color: #66ff1a;
-    text-shadow: 0px 0px 7px #000000;
+    text-shadow: 0px 0px 12px #000;
 }
 
 .user {
