@@ -6,6 +6,10 @@ session_start();
 		  $usuario = $auth->getUsuarioLogueado();
       $nombre = $usuario->getNombre();
       $apellido = $usuario->getApellido();
+      $bandas = $usuario->getBandas();
+      $instrum = $usuario->getInst();
+      
+     // var_dump($usuario);
 	} else {
 	    header("location:index.php");
 	}
@@ -23,6 +27,7 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/homex.css" type="text/css" />
     <link rel="stylesheet" href="css/usuario.css" type="text/css" />
+    <link rel="stylesheet" href="css/file-input.css" type="text/css" />
     <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
     <title>QPlay Musica</title>
   </head>
@@ -81,6 +86,18 @@ session_start();
       <div class="col-md-6 col-md-offset-3">
           <p class="username text-center"><?php echo $nombre." ".$apellido; ?></p>
       </div>
+      <div class="col-md-3 col-xs-12">
+        
+        <div class="botsub">  
+          <input type="file" name="file-1" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
+          <label for="file-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+          <span class="iborrainputfile">Subir Avatar</span>
+          </label>   
+        </div>    
+           
+           
+      </div>
   </div>
 </div>
 <!-- FIN DE LA FOTO -->
@@ -94,36 +111,36 @@ session_start();
                 <h3 class="panel-title">Bandas que te gustan</h3>
             </div>
             <div class="panel-body">
+              <?php foreach ($bandas as $banda) { ?>
                 <ul>
-                    <li><a href="" class="banda">Metalica</a></li>
-                    <li><a href="" class="banda">Los Redondos</a></li>
-                    <li><a href="" class="banda">Merlin</a></li>
-                    <li><a href="" class="banda">Nirvana</a></li>
-                    <li><a href="" class="banda">Patrik Swaiser</a></li>
+                  <?php echo "<li><a class=banda>".$banda."</a></li>";  ?>
                 </ul>
+              <?php  } ?>  
             </div>
         </div>
+        
         <div class="panel panel-bandas">
             <div class="panel-heading">
                 <h3 class="panel-title">Instrumentos que tocas</h3>
             </div>
             <div class="panel-body">
+              <?php foreach ($instrum as $inst) { ?>
                 <ul>
-                    <li><a href="" class="banda">Violin</a></li>
-                    <li><a href="" class="banda">Bombo</a></li>
-                    <li><a href="" class="banda">Trompetita</a></li>
-                    <li><a href="" class="banda">Flautita</a></li>
-                    <li><a href="" class="banda">Ding Dilin</a></li>
+                  <?php echo "<li><a class=banda>".$inst."</a></li>";  ?>
                 </ul>
+              <?php  } ?>  
             </div>
-        </div>        
+        </div>
 
     </div>
     
     <div class="col-md-6 col-sm-6 col-xs-12">
        <form class="form" id="form" action="" method="post">
-          <div class="form-group">
+          <div class="input-group">
             <input type="text" class="form-control" id="post" name="post" placeholder="Que cuentas hoy?" maxlength="55">
+            <span class="input-group-btn">
+              <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-lg"></i></button>
+            </span>
           </div>
             <!-- button type="submit" class="btn btn-login center-block">Ingresar</button -->
         </form>
@@ -238,6 +255,7 @@ session_start();
 <script type="text/javascript" src="js/botcolaps.js"></script>
 <script type="text/javascript" src="js/navanim.js"></script>
 <script type="text/javascript" src="js/logval.js"></script>
+<script type="text/javascript" src="js/jquery.custom-file-input.js"></script>
 
 </body>
 </html>

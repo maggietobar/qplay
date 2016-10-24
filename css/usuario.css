@@ -77,9 +77,13 @@ body {
 
 .panel-bandas {
     border: 1px solid #94d500;
-    background-color: #222;
+    background-color: #f2f2f2;
     border-radius: 0;
     box-shadow: 0 0 12px #000;
+}
+
+ul > li {
+    cursor: pointer;
 }
 
 .panel-heading {
@@ -161,6 +165,25 @@ h3 {
     color: #94d500;
 }
 
+
+.input-group {
+    padding-bottom: 30px;
+}
+
+.input-group > input {
+    box-shadow: 0 0 12px #000;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.input-group > input:focus {
+    border: 1px solid #94d500;
+    box-shadow: 0 0 9px #94d500;
+}
+
 .form-group {
     padding-bottom: 30px;
 }
@@ -235,6 +258,27 @@ h3 {
 
 
 /*-------------------------------------------fin efecto-*/
+
+
+.btn-post {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 17px;
+    border-radius: 0;
+    border-color: #94d500;
+    background-color: #222;
+    margin-top: 0px;
+    padding: 12px 17px;
+   /* box-shadow: 0 0 12px #000;*/
+    color: #94d500;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-post:hover, .btn-post:focus {
+    border-color: #fff;
+    background-color: #94d500;
+    color: #fff;
+    box-shadow: 0 0 9px #94d500;
+}
 
 .btn-login {
     font-family: 'Maven Pro', sans-serif;
