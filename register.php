@@ -3,7 +3,7 @@
 
 	if ($auth->estaLogueado())
 	{
-		header("location:index.php");exit;
+		header("location:usuariolog.php");exit;
 	}
 
     $meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",];
