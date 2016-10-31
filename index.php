@@ -8,8 +8,8 @@ genHead("Qplay", "Qplay", "Tu Musica!");
 <!-- COMIENZO DE JUMBOTRON -->
 
 <div class="jumbotron text-center">
-  <h1>Un lugar para ir juntos a la par</h1>
-  <p>Compartí tus intereses y pasiones con tus almas gemelas en todo tiempo y lugar!</p>
+  <h1 class="font-russo">Un lugar para ir juntos a la par</h1>
+  <p class="font-exo">Compartí tus intereses y pasiones con tus almas gemelas en todo tiempo y lugar!</p>
 </div>
 
 <!-- FIN DEL JUMBOTRON -->

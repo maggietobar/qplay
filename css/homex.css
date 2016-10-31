@@ -100,20 +100,23 @@ body {
 /* estilos de los botones de navbar "Conectate y Registrate"*/
 
 .btn-nav {
-    border-color: #94d500;
+   /* border-color: #94d500;*/
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     color:#00bfff;
     border-radius: 0px;
-   /* margin-bottom: 7px;
+    width: 150px;
+    height: 63px;
     margin-left: 10px;
-    padding: 0px 7px;*/
+
 }
 
 .navbar-inverse .navbar-nav > li > a {
   color:#94d500;
-  padding: 13px;
+  padding-top: 20px;
+  font-size: 15px;
+  
 }
 
 .navbar-inverse .navbar-nav > li > .btn-nav:hover {
@@ -133,21 +136,19 @@ body {
     height: 630px;
     margin-bottom: 0px;
     border-radius: 0px;
-    background-image: url(../img/tocguit2.jpg);
+    background-image: url(../img/people.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .jumbotron h1{
     margin-top: 220px;
-    font-family: 'Comfortaa', cursive;
     color: #66ff1a;
     text-shadow: 0px 0px 7px #000000;
 }
 
 .jumbotron p {
-    font-family: 'Exo', sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     color: #fff;
     text-shadow: 0px 0px 7px #000000;
 

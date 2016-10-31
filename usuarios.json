@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 {"id":1,"nombre":"Sebas","apellido":"Crosta","email":"sebas.crosta@gmail.com","password":"$2y$10$fOIkyIkopzblrAO4uORWzuTabaPP.pCLeDJ6nnhWIgTvgI1qfDfam","fecha":"20-12-1993","bandas":["Clever Girl"],"inst":["Guitarra"],"nivelinst":["2"],"idPass":"AtS5jaIyqwqRgTz"}
 {"id":2,"nombre":"John","apellido":"Frusciante","email":"Frusciante@gmail.com","password":"$2y$10$ScEFkApSN.B9JbgSRVg85erZsqJqedSWU.jlthFtAmz92aZi0fOJW","fecha":"4-4-1943","bandas":["RHCP"],"inst":["Guitarra"],"nivelinst":["0"],"idPass":"VV2doeVrTmTWJZj"}
 {"id":3,"nombre":"ada","apellido":"sdasd","email":"tincho.vazquez@hotmail.com","password":"$2y$10$wcIrxXXWx9J1G73XIGpiNOA7pPwmnkk48NkswwgDS95IHZ\/dXFtGK","fecha":"3-3-1930","bandas":["asd"],"inst":["asd"],"nivelinst":["0"],"idPass":"3DeOHXcsHaSWBNl"}
-=======
-{"id":1,"nombre":"Eugenio","apellido":"Vorontsov","email":"eugenixfenix@gmail.com","password":"$2y$10$1trPVDSJBoKavX09o.a3tOVPkGaphoTG8tbLedS08cw8Bb5DMqo6y","fecha":"17-4-1982","bandas":["Petra","Dash Berlin","Maetrik","Maceo Plex","Gulle Placencia"],"inst":["Consola Dj","Tracktor Dj"],"nivelinst":["3","2"],"idPass":"pJosQvZjll6Bi99"}
->>>>>>> plugin
+{"id":4,"nombre":"Eugenio","apellido":"Vorontsov","email":"eugenixfenix@gmail.com","password":"$2y$10$JvzVwSyhYJZpG8qkWJyASOALmjLQaPX8LBjfvacs3fAV.\/NMtIYfu","fecha":"17-4-1982","bandas":["Maetrik","Maceo Plex","Dash Berlin","September"],"inst":["Denon Dj Console","Traktor DJ"],"nivelinst":["3","2"],"idPass":"idDZ7Bueuvlreyy"}

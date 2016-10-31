@@ -54,8 +54,8 @@ function genHead ($tituloweb, $logo, $slogan) {
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-nav" href="login.php"><i class="fa fa-link fa-lg"></i> Conectate </a></li>
-        <li><a class="btn btn-nav" href="register.php"><i class="fa fa-book fa-lg"></i> Registrate </a></li>
+        <li><a class="btn btn-nav font-ubuntu" href="login.php"><i class="fa fa-user-circle-o fa-lg"></i> Conectate </a></li>
+        <li><a class="btn btn-nav font-ubuntu" href="register.php"><i class="fa fa-pencil-square-o fa-lg"></i> Registrate </a></li>
       </ul>
       <!--form class="navbar-form navbar-right">
         <div class="form-group">
