@@ -50,8 +50,9 @@ session_start();
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre." ".$apellido; ?>
-              <img class="img-circle subuser" src="img/user.jpg" alt="user" width="40" height="40">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img class="img-circle subuser" src="img/user.jpg" alt="user" width="40" height="40">
+            <?php echo "  ".$nombre." ".$apellido; ?>
            <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
@@ -96,7 +97,6 @@ session_start();
           </label>   
         </div>    
            
-           
       </div>
   </div>
 </div>
@@ -135,52 +135,115 @@ session_start();
     </div>
     
     <div class="col-md-6 col-sm-6 col-xs-12">
-       <form class="form" id="form" action="" method="post">
-          <div class="input-group">
-            <input type="text" class="form-control" id="post" name="post" placeholder="Que cuentas hoy?" maxlength="55">
-            <span class="input-group-btn">
-              <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-lg"></i></button>
-            </span>
+      <div class="container">
+        <div class="row tupost">
+          <div class="col-md-6 col-sm-12">
+            <form class="form" id="form" action="" method="post">
+              <div class="input-group">
+                <input type="text" class="form-control" id="post" name="post" placeholder="Que cuentas hoy?" maxlength="55">
+                <span class="input-group-btn">
+                  <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-2x"></i></button>
+                </span>
+              </div>
+                <!-- button type="submit" class="btn btn-login center-block">Ingresar</button -->
+            </form>
           </div>
-            <!-- button type="submit" class="btn btn-login center-block">Ingresar</button -->
-        </form>
+        </div>
+        <div class="row postcont">
+          <div class="col-md-6 col-sm-12">
+            
+            <div class="media posteo">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle subuser" src="img/user.jpg" alt="Javier" width="64" height="64">
+                </a>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Javier Da Silva</h3>
+                 <p class="postcoment">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                 sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                 magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                 vel illum dolore eu feugiat nulla facilisis at vero eros et
+                 </p> 
+              </div>
+              <div class="">
+                <form class="form" id="posteo" action="" method="post">
+                  <div class="input-group postcom">
+                    <input type="text" class="form-control" id="post" name="postcom" placeholder="Comentario...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-2x"></i></button>
+                      </span>
+                  </div>
+                </form> 
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row postcont">
+          <div class="col-md-6 col-sm-12">
+            
+            <div class="media posteo">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle subuser" src="img/user.jpg" alt="Javier" width="64" height="64">
+                </a>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Alberto Fernandez</h3>
+                 <p class="postcoment">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                 sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                 magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                 quis nostrud exerci
+                 </p>
+                 <img src="img/img5.jpg" alt="Evento" width="250" height="250">
+              </div>
+              <div class="">
+                <form class="form" id="posteo" action="" method="post">
+                  <div class="input-group postcom">
+                    <input type="text" class="form-control" id="post" name="postcom" placeholder="Comentario...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-2x"></i></button>
+                      </span>
+                  </div>
+                </form> 
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row postcont">
+          <div class="col-md-6 col-sm-12">
+            
+            <div class="media posteo">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle subuser" src="img/usero.jpg" alt="Javier" width="64" height="64">
+                </a>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Laura Acosta</h3>
+                 <p class="postcoment">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                 sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                 magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p> 
+              </div>
+              <div class="">
+                <form class="form" id="posteo" action="" method="post">
+                  <div class="input-group postcom">
+                    <input type="text" class="form-control" id="post" name="postcom" placeholder="Comentario...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-2x"></i></button>
+                      </span>
+                  </div>
+                </form> 
+              </div>
+            </div>
+            
+          </div>
+        </div>
         
-        <div class="media posteo">
-            <div class="media-left">
-                <a href="#">
-                <img class="media-object img-circle subuser" src="img/user.jpg" alt="Javier" width="64" height="64">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Javier Da Silva</h4>
-                  El recital de a noche estuvo genial! Tenemos que repetir la salida!
-            </div>
-        </div>
-        <div class="media posteo">
-            <div class="media-left">
-                <a href="#">
-                <img class="media-object img-circle subuser" src="img/usero.jpg" alt="Jesy" width="64" height="64">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Jessica Piroshka</h4>
-                  Tenemos que juntarnos para enborracharnos mas que el otro dia!
-                  Conozco un lugar que tiene canilla libre
-            </div>
-        </div>
-        <div class="media posteo">
-            <div class="media-left">
-                <a href="#">
-                <img class="media-object img-circle subuser" src="img/user.jpg" alt="Carlos" width="64" height="64">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Carlos Rokero</h4>
-                  Quien va al evento de mañana? Dicen que va a estar genial!
-            </div>
-        </div>
-
-    </div>
+      </div> <!-- fin del container de la columna del medio -->
+    </div><!-- fin de la columna del medio -->
     
     <div class="col-md-3 col-sm-3 col-xs-12">
         <div class="thumbnail">
@@ -205,25 +268,10 @@ session_start();
 </div>
 
 <!-- COMIENZO DEL FOOTER -->
-<div class="container-fluid footer">
+<!--nav class="navbar navbar-fixed-bottom" -->
+<div class="container-fluid footeru">
   <div class="row">
-    <div class="col-md-12">
-      <ul class="list-inline text-center">
-        <li><a href="login.php" class="footlink">Conectate</a></li>
-        <li><p></p></li>
-        <li><a href="register.php" class="footlink">Registrate</a></li>
-        <li><p></p></li>
-        <li><a href="faq.php" class="footlink">Preguntas (FAQs)</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p class="font-maven footp text-center">Diseñado y desarollado por Eugenio Vorontsov - Maggie Tobar - Sebastian Crosta</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
       <p class="text-center footlog">
         <i class="fa fa-html5"></i>
         <i class="fa fa-css3"></i>
@@ -235,18 +283,13 @@ session_start();
         <i class="fa fa-android"></i>
       </p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="line center-block"></div>
-    </div>
-  </div>
-    <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
       <p class="font-maven text-center footp">Copyright <i class="fa fa-copyright"></i> 2016 QPlay <i class="fa fa-registered"></i> All Rights Reserved.</p>
     </div>
   </div>
 </div>
+<!--/nav -->
 <!-- FIN DEL FOOTER -->
 
 <!-- COMIENZO DE JAVASCRIPT PLUGINS -->
