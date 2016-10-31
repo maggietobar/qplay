@@ -5,6 +5,7 @@ require_once("clases/validar.php");
 require_once("clases/jsonRepository.php");
 require_once("clases/usuario.php");
 require_once("mailer/mail.php");
+require_once("headers.php");
 
 $tipoRepositorio = "json";
 $repositorio = null;

@@ -6,6 +6,8 @@ var pass = document.getElementById("pass");
 var errinputs = document.getElementsByClassName("form-group");
 var error = document.getElementsByClassName("errcript");
 
+//var errdivphp = document.getElementsByClassName("errorph");
+
 
 var validarForm = {
 
@@ -57,7 +59,7 @@ var validarForm = {
             }  // fin 3 if else
         } else {
             errinputs[1].setAttribute("class","form-group onerror");
-        //    form.pass.focus();
+           //   errdivphp[0].style.display = "none";
             error[1].innerHTML = "<b>ERROR!</b> El campo contraseña no puede estar vacio.";
         }  // fin 4 if else
     } // fin validarPass()

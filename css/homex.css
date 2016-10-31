@@ -10,7 +10,7 @@ body {
       margin-bottom: 0px;
       border-radius: 0px;
       border: 0px;
-      padding: 10px;
+      padding: 0px;
       transition: all 0.6s ease-in-out;
 }
 
@@ -22,6 +22,7 @@ body {
 
 .logo {
      font-size: 35px;
+     padding: 20px;
 }
 
 .navbar-inverse .navbar-brand {
@@ -30,7 +31,9 @@ body {
 
 .navbar-inverse .navbar-text {
     font-size: 20px;
+    padding-top: 5px;
 }
+
 
 /* estilo de la barra de busqueda del navbar */
 
@@ -103,9 +106,9 @@ body {
     border-right: 0px;
     color:#00bfff;
     border-radius: 0px;
-    margin-bottom: 7px;
+   /* margin-bottom: 7px;
     margin-left: 10px;
-    padding: 0px 7px;
+    padding: 0px 7px;*/
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -121,10 +124,7 @@ body {
 
 .navbar-form {
   padding: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 5px;
+  margin:0px 5px 0px 0px;
 }
 
 /* jumbotron */
@@ -244,7 +244,7 @@ p > .fa-tel {
 p > .logpage {
     background-color: #222;
     padding: 7px;
-    font-size: 30px;
+    font-size: 25px;
     color: #94d500;
     border-radius: 5px;
     margin-top: 20px;
@@ -255,8 +255,12 @@ p > .logpage {
 .inlogo {
     display: inline;
     padding: 5px;
-    font-size: 22px;
+    font-size: 20px;
     font-family: Ubuntu;
+}
+
+.cellview {
+    vertical-align:bottom;
 }
 
 
@@ -319,7 +323,7 @@ li > .footlink {
 .font-poppins {font-family: 'Poppins', sans-serif;}
 .font-maven {font-family: 'Maven Pro', sans-serif;}
 .font-antic {font-family: 'Antic', sans-serif;}
-.font-poiret {font-family: 'Poiret One', cursive;}
+
 
 .logspot {
     font-size: 25px;
