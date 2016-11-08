@@ -125,7 +125,7 @@ session_start();
             <div class="panel-body">
               <?php foreach ($instrum as $inst => $nivel) { ?>
                 <ul>
-                  <?php echo "<li><a class=banda>".$inst."</a></li>";  ?>
+                  <?php echo "<li><a class=banda>".$inst."</a>".$nivel."</li>";  ?>
                 </ul>
               <?php  } ?>  
             </div>
