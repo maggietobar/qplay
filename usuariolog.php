@@ -1,9 +1,13 @@
 <?php
 require_once("soporte.php");
-session_start();
+
+    if(!$_SESSION) {
+        session_start();
+    }
 
 	if ($auth->estaLogueado()) {
-		  $usuario = $auth->getUsuarioLogueado();
+        $usuario = $auth->getUsuarioLogueado();
+
       $nombre = $usuario->getNombre();
       $apellido = $usuario->getApellido();
       $bandas = $usuario->getBandas();
@@ -125,7 +129,7 @@ session_start();
             <div class="panel-body">
               <?php foreach ($instrum as $inst => $nivel) { ?>
                 <ul>
-                  <?php echo "<li><a class=banda>".$inst."</a></li>";  ?>
+                  <?php echo "<li><a class=banda>".$inst." (".$nivel.")"."</a></li>";  ?>
                 </ul>
               <?php  } ?>  
             </div>

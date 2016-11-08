@@ -83,7 +83,6 @@ class UserMySQLRepository extends UserRepository {
 	}
 
 	private function arrayToUsuario(Array $miUsuario) {
-
 	    $miUsuario['bandas'] = $this->getBandasbyIdUsuario($miUsuario['id']);
         $miUsuario['inst'] = $this->getInstrumentosbyIdUsuario($miUsuario['id']);
 		return new Usuario($miUsuario);
@@ -206,21 +205,28 @@ public function insertarInstrumentos (Usuario $miUsuario){
 public function getBandasbyIdUsuario ($id){
     $stmt = $this->miConexion->prepare("SELECT banda from bandas WHERE id_usuario = :id");
     $stmt->bindValue(":id" , $id);
-    $bandasArray = $stmt->fetchAll();
+    $stmt->execute();
+    $resultados = $stmt->fetchAll();
+
+    foreach($resultados as $linea){
+        $bandasArray[] = $linea['banda'];
+    }
+
     return $bandasArray;
 }
 
 public function getInstrumentosbyIdUsuario($id){
-    $stmt = $this->miConexion->prepare("SELECT instrumento nivel from instrumentos WHERE id_usuario = :id");
+    $stmt = $this->miConexion->prepare("SELECT * from instrumentos WHERE id_usuario = :id");
     $stmt->bindValue(":id" , $id);
+    $stmt->execute();
     $resultados = $stmt->fetchAll();
+
 
     foreach($resultados as $linea){
         $instrumentosArray[$linea['instrumento']] = $linea['nivel'];
     }
 
     return $instrumentosArray;
-
 }
 
 }

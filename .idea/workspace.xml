@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c64540ec-027c-4ef5-b8b3-276d376976e0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/b60e4720-9cda-47eb-bf50-e1262bdbbc2f.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/mySQLRepository.php" afterPath="$PROJECT_DIR$/clases/mySQLRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/userJsonRepository.php" afterPath="$PROJECT_DIR$/clases/userJsonRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/userMySQLRepository.php" afterPath="$PROJECT_DIR$/clases/userMySQLRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/usuario.php" afterPath="$PROJECT_DIR$/clases/usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/validar.php" afterPath="$PROJECT_DIR$/clases/validar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/validacion_register.js" afterPath="$PROJECT_DIR$/js/validacion_register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migracion.php" afterPath="$PROJECT_DIR$/migracion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdo.php" afterPath="$PROJECT_DIR$/pdo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soporte.php" afterPath="$PROJECT_DIR$/soporte.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/usuariolog.php" afterPath="$PROJECT_DIR$/usuariolog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/usuarios.json" afterPath="$PROJECT_DIR$/usuarios.json" />
     </list>
     <ignored path="qplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +50,21 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="usuarios" />
+        <option name="myItemId" value="instrumentos" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - qplay@localhost [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="bandas" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -69,38 +74,7 @@
     <favorites_list name="qplay" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="usuariolog.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuariolog.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clases/auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usuario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clases/usuario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -166,8 +140,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,11 +255,12 @@
       <workItem from="1478410662682" duration="65000" />
       <workItem from="1478454238251" duration="1491000" />
       <workItem from="1478552256274" duration="11166000" />
+      <workItem from="1478639073449" duration="3258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27538000" />
+    <option name="totallyTimeSpent" value="30796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -294,21 +269,21 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1295754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038067" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13836017" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -363,7 +338,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1478564650239" expanded="true" signature="2991:2999" ph="ñ" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -412,7 +389,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-          <folding />
+          <folding>
+            <marker date="1478564650239" expanded="true" signature="2991:2999" ph="ñ" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -494,7 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,97 +492,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.posts">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.instrumentos">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.bandas">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.posts" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.usuarios" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.instrumentos" />
+    <entry file="dbDummy://dbtable:/474c19c9/b60e4720-9cda-47eb-bf50-e1262bdbbc2f/qplay.bandas" />
     <entry file="file://$PROJECT_DIR$/pdo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -625,7 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,7 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,33 +556,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/1e9cccac-bcd0-4ab8-9aa4-a985c23bbb81/qplay.instrumentos">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/474c19c9/1e9cccac-bcd0-4ab8-9aa4-a985c23bbb81/qplay.bandas">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -726,6 +590,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/474c19c9/1e9cccac-bcd0-4ab8-9aa4-a985c23bbb81/qplay.bandas">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/474c19c9/1e9cccac-bcd0-4ab8-9aa4-a985c23bbb81/qplay.usuarios">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -739,34 +616,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/userMySQLRepository.php">
+    <entry file="file://$PROJECT_DIR$/clases/usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="87" column="15" selection-start-line="87" selection-start-column="15" selection-end-line="87" selection-end-column="15" />
-          <folding>
-            <marker date="1478564914013" expanded="true" signature="581:623" ph="SELECT * fro... usuario" />
-            <marker date="1478564914013" expanded="true" signature="958:1108" ph="Update usuar... " />
-            <marker date="1478564914013" expanded="true" signature="1170:1319" ph="INSERT INTO usuario... " />
-            <marker date="1478564914013" expanded="true" signature="1434:1573" ph="INSERT INTO usuario... " />
-            <marker date="1478564914013" expanded="true" signature="2724:2766" ph="SELECT * fro... usuario" />
-            <marker date="1478564914013" expanded="true" signature="3048:3085" ph="SELECT * fro... usuario" />
-            <marker date="1478564914013" expanded="true" signature="3535:3556" ph="SELECT * fro... usuario" />
-            <marker date="1478564914013" expanded="true" signature="3535:3557" ph="SELECT * fro... usuarios" />
-            <marker date="1478564914013" expanded="true" signature="4106:4174" ph="INSERT INTO bandas... " />
-            <marker date="1478564914013" expanded="true" signature="4548:4648" ph="INSERT INTO instrumentos... " />
-            <marker date="1478564914013" expanded="true" signature="4935:4959" ph="SELECT banda... bandas" />
-            <marker date="1478564914013" expanded="true" signature="4935:4982" ph="SELECT banda... bandas" />
-            <marker date="1478564914013" expanded="true" signature="4935:5019" ph="SELECT banda... bandas" />
-            <marker date="1478564914013" expanded="true" signature="5176:5206" ph="SELECT banda... bandas" />
-            <marker date="1478564914013" expanded="true" signature="5176:5241" ph="SELECT instr... instrumentos" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/usuario.php">
+    <entry file="file://$PROJECT_DIR$/clases/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="-561">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -781,17 +642,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuariolog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="187">
+          <caret line="162" column="20" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="dbDummy://dbtable:/474c19c9/1e9cccac-bcd0-4ab8-9aa4-a985c23bbb81/qplay.instrumentos">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/userMySQLRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="41" />
+          <folding>
+            <marker date="1478643065296" expanded="true" signature="581:623" ph="SELECT * fro... usuario" />
+            <marker date="1478643065296" expanded="true" signature="958:1108" ph="Update usuar... " />
+            <marker date="1478643065296" expanded="true" signature="1170:1319" ph="INSERT INTO usuario... " />
+            <marker date="1478643065296" expanded="true" signature="1434:1573" ph="INSERT INTO usuario... " />
+            <marker date="1478643065296" expanded="true" signature="2723:2765" ph="SELECT * fro... usuario" />
+            <marker date="1478643065296" expanded="true" signature="3047:3084" ph="SELECT * fro... usuario" />
+            <marker date="1478643065296" expanded="true" signature="3534:3555" ph="SELECT * fro... usuario" />
+            <marker date="1478643065296" expanded="true" signature="3534:3556" ph="SELECT * fro... usuarios" />
+            <marker date="1478643065296" expanded="true" signature="4105:4173" ph="INSERT INTO bandas... " />
+            <marker date="1478643065296" expanded="true" signature="4547:4647" ph="INSERT INTO instrumentos... " />
+            <marker date="1478643065296" expanded="true" signature="4934:4958" ph="SELECT banda... bandas" />
+            <marker date="1478643065296" expanded="true" signature="4934:4981" ph="SELECT banda... bandas" />
+            <marker date="1478643065296" expanded="true" signature="4934:5018" ph="SELECT banda... bandas" />
+            <marker date="1478643065296" expanded="true" signature="5282:5296" ph="SELECT banda... bandas" />
+            <marker date="1478643065296" expanded="true" signature="5282:5331" ph="SELECT instr... instrumentos" />
+          </folding>
         </state>
       </provider>
     </entry>
