@@ -10,21 +10,25 @@ class Usuario {
 	private $fecha;
 	private $bandas = [];
 	private $inst = [];
-	private $nivelinst = [];
     private $idPass;
 
 	public function __construct(Array $miUsuario)
 	{
-		$this->id = $miUsuario["id"];  
 		$this->nombre = $miUsuario["nombre"];
 		$this->apellido = $miUsuario["apellido"];
 		$this->email = $miUsuario["email"];
 		$this->password = $miUsuario["password"];
 		$this->fecha = $miUsuario["dianac"]."-".$miUsuario["mesnac"]."-".$miUsuario["anionac"];
 		$this->bandas = $miUsuario["bandas"];
-		$this->inst = $miUsuario["inst"];
-		$this->nivelinst = $miUsuario["nivelinst"];
-        $this->idPass = $miUsuario["idPass"];
+        $this->setIdPass();
+
+        if(array_key_exists('register', $miUsuario)){
+            for ($i = 0; $i < count($miUsuario['inst']); $i++){
+                $this->inst[$miUsuario['inst'][$i]] =  $miUsuario['nivelinst'][$i];
+            }
+        }else{
+            $this->inst = $miUsuario['inst'];
+        }
 
 	}
 
@@ -40,9 +44,6 @@ class Usuario {
 	public function getMail() {
 		return $this->email;
 	}
-	public function getSexo() {
-		return $this->sexo;
-	}
 	public function getPassword() {
 		return $this->password;
 	}
@@ -54,9 +55,6 @@ class Usuario {
 	}
 	public function getInst() {
 		return $this->inst;
-	}
-	public function getNivelinst() {
-		return $this->nivelinst;
 	}
 	public function getIdPass(){
 	    return $this->idPass;

@@ -8,8 +8,7 @@ session_start();
       $apellido = $usuario->getApellido();
       $bandas = $usuario->getBandas();
       $instrum = $usuario->getInst();
-      
-     // var_dump($usuario);
+
 	} else {
 	    header("location:index.php");
 	}
@@ -124,7 +123,7 @@ session_start();
                 <h3 class="panel-title">Instrumentos que tocas</h3>
             </div>
             <div class="panel-body">
-              <?php foreach ($instrum as $inst) { ?>
+              <?php foreach ($instrum as $inst => $nivel) { ?>
                 <ul>
                   <?php echo "<li><a class=banda>".$inst."</a></li>";  ?>
                 </ul>
@@ -230,7 +229,7 @@ session_start();
               <div class="">
                 <form class="form" id="posteo" action="" method="post">
                   <div class="input-group postcom">
-                    <input type="text" class="form-control" id="post" name="postcom" placeholder="Comentario...">
+                    <input type="text" class="form-control" id="post" name="postcom" placeholder="Comentario">
                       <span class="input-group-btn">
                         <button class="btn btn-post" type="button"><i class="fa fa-play-circle-o fa-2x"></i></button>
                       </span>
@@ -249,7 +248,7 @@ session_start();
         <div class="thumbnail">
             <img src="img/img4.jpg" alt="Evento" width="242" height="200">
                 <div class="caption">
-                    <h3>Recital de Beatles</h3>
+                    <h3>Recital de Los Beatles</h3>
                     <p class="thumcoment">No te pierdas en esta oportunidad el gran recital que te partira
                     la cabeza en dos y no sabras mas de donde venis! Cerveza gratis
                     toda la noche y luego le daremos un ticket para el pancho bajon.

@@ -11,6 +11,8 @@ $userSQLRepo = $mySQLRepo->getUserRepository();
 
 $usuariosJSON = $userJsonRepo->getAllUsers();
 
+
+
 try {
 	$mySQLRepo->startTransaction();
 	foreach ($usuariosJSON as $usuarioJSON) {
@@ -18,6 +20,8 @@ try {
 	}
 
     $mySQLRepo->commitTransaction();
+
+	echo "La migración fue completada exitosamente";
 } catch(PDOException $ex) {
     //Something went wrong rollback!
     $mySQLRepo->rollBack();

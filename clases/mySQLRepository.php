@@ -8,8 +8,7 @@ class MySQLRepository extends Repository {
 	private $connection;
 
 	public function __construct() {
-		$this->connection = new PDO('mysql:host=localhost;dbname=miSistema', "root", "");
-		// Acá deberíamos tener el user y pass en un archivo de texto QUE NO SE VERSIONA, NO SE SUBE A NINGUN LADO Y NADIE TIENE
+		$this->connection = new PDO('mysql:host=localhost;dbname=qplay', "root", "");
 	}
 
 	public function getUserRepository()

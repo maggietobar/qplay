@@ -12,10 +12,9 @@
 	$pApellido = "";
 	$pMail = "";
 
-	$sexos = ["Masculino", "Femenino", "Otro"];
 
-	if ($_POST)
-	{
+	if ($_POST){
+        $datosPost = $_POST;
 		$pNombre = $_POST["nombre"];
 		$pApellido = $_POST["apellido"];
 		$pMail = $_POST["email"];
@@ -27,8 +26,10 @@
 		// Si no hay errores....
 		if (empty($errores))
 		{
-			$usuario = new Usuario($_POST);
+		    $datosPost['register'] = true;
+            $usuario = new Usuario($datosPost);
 			$usuario->setPassword($_POST["password"]);
+            $usuario->setIdPass();
 			// Guardar al usuario en un JSON
 			$repositorio->getUserRepository()->guardarUsuario($usuario);
 //			$usuario->guardarImagen($usuario);
@@ -175,10 +176,10 @@
                                 </div>
                                 <div class="col-md-4 col-xs-8 instselect">
                                     <select class="form-control selcontenido" name="nivelinst[]">
-                                        <option value="0">Principiante</option>
-                                        <option value="1">Intermedio</option>
-                                        <option value="2">Avanzado</option>
-                                        <option value="3">Experto</option>
+                                        <option value="Principiante">Principiante</option>
+                                        <option value="Intermedio">Intermedio</option>
+                                        <option value="Avanzado">Avanzado</option>
+                                        <option value="Experto">Experto</option>
                                     </select>
                                 </div>
                             </div>

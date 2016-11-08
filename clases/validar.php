@@ -29,14 +29,17 @@ class Validar {
 
         $errores = [];
 
+
         if (trim($miUsuario["nombre"]) == "")
         {
             $errores["nombre"] = "<b>ERROR!</b> El campo Nombre no puede estar vacio.";
         }
+
         if (trim($miUsuario["apellido"]) == "")
         {
             $errores["apellido"] = "<b>ERROR!</b> El campo Apellido no puede estar vacio.";
         }
+
         if ($miUsuario["email"] == "")
         {
             $errores["email"] = "<b>ERROR!</b> El campo Email no puede estar vacio.";
@@ -46,12 +49,14 @@ class Validar {
                 $errores["email"] = "<b>ERROR!</b> El Email ingresado no es valido.";
                 unset($_POST['email']);
             }
+
             if ($this->userRepository->existeElMail($miUsuario["email"]))
             {
                 $errores["email"] = "<b>ERROR!</b> El Email ya pertenece a un usuario registrado.";
                 unset($_POST['email']);
             }
         }
+
 
         if (trim($miUsuario["password"]) == "")
         {
@@ -94,7 +99,7 @@ class Validar {
             $errores ["pass"] = "<b>ERROR!</b> La Contraseña es incorrecta.";
         }
 
-        if ($_POST["recordar_usuario"]=="1") {
+        if ($_POST["recordarme"]=="1") {
           setcookie('cookie_mail', $_GET['mail'], time() + (60*60*24*365));
         }
 

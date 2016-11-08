@@ -37,7 +37,7 @@ window.onload = function () {
         var opt = document.createElement("option");
         var line = "";
         for (var i = 0; i < opciones.length; i++) {
-            line += "<option value="+i+">";
+            line += "<option value=" + opciones[i] + ">";
             line += opt.innerHTML = opciones[i];
             line += "</option>";
         }

@@ -12,9 +12,19 @@ class UserMySQLRepository extends UserRepository {
 		$this->miConexion = $miConexion;
 	}
 
+    public function passValido($mail, $pass) {
+        $usuario = $this->getUsuarioByMail($mail);
+        if ($usuario) {
+            if (password_verify($pass, $usuario->getPassword())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 	public function existeElMail($mail)
 	{
-		$stmt = $this->miConexion->prepare("SELECT * from usuario where mail = :mail");
+		$stmt = $this->miConexion->prepare("SELECT * from usuarios where email = :mail");
 
 		$stmt->bindValue(":mail", $mail);
 
@@ -36,11 +46,11 @@ class UserMySQLRepository extends UserRepository {
 		{
 			if ($this->getUsuarioById($miUsuario->getId()))
 			{
-				$stmt = $this->miConexion->prepare("Update usuario set nombre = :nombre, apellido = :apellido, mail = :mail, sexo = :sexo, password = :password WHERE id = :id");
+				$stmt = $this->miConexion->prepare("Update usuarios set nombre = :nombre, apellido = :apellido, email = :mail, password = :password, fechanac = :fechanac, idpass = :idpass WHERE id = :id");
 			}
 			else
 			{
-				$stmt = $this->miConexion->prepare("INSERT INTO usuario (id, nombre, apellido, sexo, password, mail) values (:id, :nombre, :apellido, :sexo, :password, :mail)");
+				$stmt = $this->miConexion->prepare("INSERT INTO usuarios (id, nombre, apellido, email, password, fechanac, idpass) values (:id, :nombre, :apellido, :mail, :password, :fechanac, :idpass)");
 			}
 
 
@@ -49,26 +59,33 @@ class UserMySQLRepository extends UserRepository {
 		}
 		else
 		{
-			$stmt = $this->miConexion->prepare("INSERT INTO usuario (nombre, apellido, sexo, password, mail) values (:nombre, :apellido, :sexo, :password, :mail)");
+			$stmt = $this->miConexion->prepare("INSERT INTO usuarios (nombre, apellido, email,password, fechanac, idpass) values (:nombre, :apellido, :mail, :password, :fechanac, :idpass)");
 		}
 
 		$stmt->bindValue(":nombre", $miUsuario->getNombre());
 		$stmt->bindValue(":apellido", $miUsuario->getApellido());
-		$stmt->bindValue(":sexo", $miUsuario->getSexo());
 		$stmt->bindValue(":password", $miUsuario->getPassword());
 		$stmt->bindValue(":mail", $miUsuario->getMail());
-        insertarBandas($miUsuario);
-        insertarInstrumentos($miUsuario);
-		$stmt->execute();
+		$stmt->bindValue(":fechanac", $miUsuario->getFecha());
+		$stmt->bindValue(":idpass", $miUsuario->getIdPass());
 
-		if ($miUsuario->getId() == null)
-		{
-			$miUsuario->setId($this->miConexion->lastInsertId());
-		}
+       $stmt->execute();
+
+
+        if ($miUsuario->getId() == null)
+        {
+            $miUsuario->setId($this->miConexion->lastInsertId());
+        }
+
+        $this->insertarBandas($miUsuario);
+        $this->insertarInstrumentos($miUsuario);
+
 	}
 
-
 	private function arrayToUsuario(Array $miUsuario) {
+
+	    $miUsuario['bandas'] = $this->getBandasbyIdUsuario($miUsuario['id']);
+        $miUsuario['inst'] = $this->getInstrumentosbyIdUsuario($miUsuario['id']);
 		return new Usuario($miUsuario);
 	}
 
@@ -87,7 +104,7 @@ class UserMySQLRepository extends UserRepository {
 
 	public function getUsuarioByMail($mail)
 	{
-		$stmt = $this->miConexion->prepare("SELECT * from usuario where mail = :mail");
+		$stmt = $this->miConexion->prepare("SELECT * from usuarios where email = :mail");
 
 		$stmt->bindValue(":mail", $mail);
 
@@ -105,7 +122,7 @@ class UserMySQLRepository extends UserRepository {
 
 	public function getUsuarioById($id)
 	{
-		$stmt = $this->miConexion->prepare("SELECT * from usuario where id = :id");
+		$stmt = $this->miConexion->prepare("SELECT * from usuarios where id = :id");
 
 		$stmt->bindValue(":id", $id);
 
@@ -121,9 +138,18 @@ class UserMySQLRepository extends UserRepository {
 		return $this->arrayToUsuario($usuarioArray);
 	}
 
+	public function emailValido($mail) {
+        $usuario = $this->getUsuarioByMail($mail);
+
+        if ($usuario) {
+            return true;
+        }
+        return false;
+    }
+
 	public function getAllUsers()
 	{
-		$stmt = $this->miConexion->prepare("SELECT * from usuario");
+		$stmt = $this->miConexion->prepare("SELECT * from usuarios");
 
 		$stmt->execute();
 
@@ -143,43 +169,58 @@ class UserMySQLRepository extends UserRepository {
 		return $usuarios;
 	}
 
-private function insertarBandas (Usuario $miUsuario){
+public function insertarBandas (Usuario $miUsuario){
 
     $bandas = $miUsuario->getBandas();
 
     if ($bandas){
         foreach ($bandas as $banda) {
 
-            $stmt = $this->miConexion->prepare("INSERT INTO bandas (id, id_usuario, banda) values (:id, :id_usuario, :banda)");
+            $stmt = $this->miConexion->prepare("INSERT INTO bandas (id_usuario, banda) values ( :id_usuario, :banda)");
 
-            $stmt->bindValue(":id", $this->miConexion->lastInsertId());
             $stmt->bindValue(":id_usuario", $miUsuario->getId());
             $stmt->bindValue(":banda", $banda);
+            $stmt->execute();
         }
 
-        $stmt->execute();
     }
 }
 
-private function insertarInstrumentos (Usuario $miUsuario){
+public function insertarInstrumentos (Usuario $miUsuario){
     $instrumentos = $miUsuario->getInst();
-    $niveles = $miUsuario->getNivelinst();
 
-    for ($i = 0; $i < count($instrumentos); $i++){
-        $stmt = $this->miConexion->prepare("INSERT INTO instrumentos (id, id_usuario, instrumento, nivel) values (:id, :id_usuario, :banda)");
 
-        $stmt->bindValue(":id", $this->miConexion->lastInsertId());
+
+    foreach ($instrumentos as $instrumento => $nivel){
+
+        $stmt = $this->miConexion->prepare("INSERT INTO instrumentos (id_usuario, instrumento, nivel) values (:id_usuario, :instrumento, :nivel)");
+
         $stmt->bindValue(":id_usuario", $miUsuario->getId());
-        $stmt->bindValue(":instrumento", $instrumentos[$i]);
-
-        switch ($niveles[$i]){
-            case 0: $nivel = "Principiante"; break;
-            case 1: $nivel = "Intermedio"; break;
-            case 2: $nivel = "Avanzado"; break;
-            case 3: $nivel = "Experto"; break;
-        }
+        $stmt->bindValue(":instrumento", $instrumento);
         $stmt->bindValue(":nivel", $nivel);
+        $stmt->execute();
     }
 
-    $stmt->execute();
-};
+}
+
+public function getBandasbyIdUsuario ($id){
+    $stmt = $this->miConexion->prepare("SELECT banda from bandas WHERE id_usuario = :id");
+    $stmt->bindValue(":id" , $id);
+    $bandasArray = $stmt->fetchAll();
+    return $bandasArray;
+}
+
+public function getInstrumentosbyIdUsuario($id){
+    $stmt = $this->miConexion->prepare("SELECT instrumento nivel from instrumentos WHERE id_usuario = :id");
+    $stmt->bindValue(":id" , $id);
+    $resultados = $stmt->fetchAll();
+
+    foreach($resultados as $linea){
+        $instrumentosArray[$linea['instrumento']] = $linea['nivel'];
+    }
+
+    return $instrumentosArray;
+
+}
+
+}

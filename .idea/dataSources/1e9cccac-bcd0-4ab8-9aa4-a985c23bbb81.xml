@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - qplay@localhost [2]">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="qplay">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="laravel"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="phpmyadmin"/>
+    <schema id="7" name="test"/>
+    <table id="8" parent="1" name="bandas"/>
+    <table id="9" parent="1" name="instrumentos"/>
+    <table id="10" parent="1" name="posts"/>
+    <table id="11" parent="1" name="usuarios"/>
+    <column id="12" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="13" parent="8" name="id_usuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="banda">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="15" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="9" name="id_usuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="instrumento">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="19" parent="9" name="nivel">
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <key id="20" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="21" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="22" parent="10" name="id_usuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="23" parent="10" name="id_post_de_usuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="24" parent="10" name="contenido">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10000)|0</data-type>
+    </column>
+    <key id="25" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="26" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="27" parent="11" name="nombre">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="28" parent="11" name="apellido">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="31" parent="11" name="fechanac">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="32" parent="11" name="idpass">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <key id="33" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

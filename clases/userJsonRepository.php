@@ -7,6 +7,8 @@ class UserJSONRepository extends UserRepository {
 
 	public function existeElMail($mail)
 	{
+
+
 		$usuariosArray = $this->getAllUsers();
 
 		foreach ($usuariosArray as $key => $usuario) {
@@ -76,7 +78,6 @@ class UserJSONRepository extends UserRepository {
 		$usuarioArray["fecha"] = $miUsuario->getFecha();
 		$usuarioArray["bandas"] = $miUsuario->getBandas();
 	  $usuarioArray["inst"] = $miUsuario->getInst();
-	  $usuarioArray["nivelinst"] = $miUsuario->getNivelinst();
 	  $usuarioArray["idPass"] = $miUsuario->getIdPass();
 
 		return $usuarioArray;
