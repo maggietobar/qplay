@@ -8,7 +8,7 @@ class MySQLRepository extends Repository {
 	private $connection;
 
 	public function __construct() {
-		$this->connection = new PDO('mysql:host=localhost;dbname=qplay', "root", "");
+		$this->connection = new PDO('mysql:host=localhost;dbname=qplay', "root", "root");
 	}
 
 	public function getUserRepository()
