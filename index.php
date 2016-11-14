@@ -24,7 +24,7 @@ genHead("Qplay", "Qplay", "Tu Musica!");
     </div>
     <div class="col-md-5 col-md-offset-2">
       <h1 class="font-comfortaa">Disfruta de una buena compania</h1>
-      <p class="font-maven">Conectate, juntate, comparti, desarolla y disfruta con tus almas gemelas en todo momento y lugar sin limites. Ahora con <span class="font-kaushan logspot">QPlay</span> podes encontrarte con todos aquellos que tienen los mismos gustos musicales que vos! No te lo pierdas!</p>
+      <p class="font-maven">Conectate, juntate, comparti, desarolla y disfruta con tus almas gemelas en todo momento y lugar sin limites. Ahora con <span class="font-poiret logspot">QPlay</span> podes encontrarte con todos aquellos que tienen los mismos gustos musicales que vos! No te lo pierdas!</p>
     </div>
     <div class="col-md-2"></div>
   </div>
@@ -36,7 +36,7 @@ genHead("Qplay", "Qplay", "Tu Musica!");
 <div class="container-fluid event">
   <div class="row image">
     <div class="col-sm-6">
-      <h3 class="text-center">Grupos</h3>
+      <h3 class="text-center font-comfortaa">Grupos</h3>
 
           <img src="img/img1.jpg" alt="..." class="img-square" width="160" height="160">
           <img src="img/img2.jpg" alt="..." class="img-square" width="160" height="160">
@@ -48,7 +48,7 @@ genHead("Qplay", "Qplay", "Tu Musica!");
 
     </div>
     <div class="col-sm-6">
-      <h3 class="text-center">Eventos</h3>
+      <h3 class="text-center font-comfortaa">Eventos</h3>
        <div class="event-info">
           <h3 class="font-comfortaa">Guitarreada en Parque Nacional</h3>
           <i class="fa fa-share fa-lg"></i>

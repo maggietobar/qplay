@@ -54,11 +54,14 @@ genHead("Ingreso", "Qplay", "Conectate con tus amigos.");
             <!-- span class="input-group-addon"><i class="fa fa-asterisk fa-lg"></i></span -->
             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" maxlength="40">
           </div>
+          
           <div class="checkbox">
-            <label><input type="checkbox" name="recordarme" value="1"> Recordarme</label>
+            <label class="switch">
+              <input type="checkbox" name="recordarme" value="1"> 
+              <div class="slider round"></div> <p class="recordarme"> Recordarme</p>
+            </label> 
             <a href="forgotpass.php" class="olvidcont">Olvidaste tu contraseña?</a>
           </div>
-
             <button type="submit" class="btn btn-login center-block">Ingresar</button>
         </form>
       </div>

@@ -100,7 +100,7 @@ body {
 /* estilos de los botones de navbar "Conectate y Registrate"*/
 
 .btn-nav {
-   /* border-color: #94d500;*/
+    /*border-color: #FFF;*/
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -108,7 +108,7 @@ body {
     border-radius: 0px;
     width: 150px;
     height: 63px;
-    margin-left: 10px;
+    margin-left: 0px;
 
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > .btn-nav:hover {
-    border-color: #A5ED00;
+    border-color: #FFF;
     background-color: #94d500;
     color: #fff;
 }
