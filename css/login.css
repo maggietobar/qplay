@@ -12,14 +12,24 @@
 .olvidcont {
     text-decoration: none;
     float: right;
+    padding-top: 3px;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     color: #c4c4c4;
     transition: all 0.3s ease-in-out;
 }
 
 .olvidcont:hover {
     color: #94d500;
+}
+
+.recordarme {
+    float: left;
+    padding-left: 43px;
+    padding-top: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #c4c4c4;
 }
 
 .logtit {
@@ -135,3 +145,69 @@
     color: #fff;
     box-shadow: 0 0 12px #000;
 }
+
+
+/*-------------------------Estilo del CheckBox-*/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 53px;
+  height: 29px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #94d500; /* #2196F3; */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #94d500;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*----------------------FIN---Estilo del CheckBox-*/
+
+

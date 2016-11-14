@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-
+                
             <div class="erro"><p class="error" id="error-mail"></p></div>
             <div class="form-group <?php echo (isset($errores["email"]))? "onerrorph" : "" ?>">
                 <input class="form-control" type="text" name="email" placeholder="Email" maxlength="55" value="<?php echo (isset($_POST['email']))? $_POST['email'] : "" ?>">
